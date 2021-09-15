@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,12 +19,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Random rnd = new Random();
+        int number = rnd.nextInt(100);
+        String percent = number + "%";
         boolean check=checkConnection();
         if(check==true){
             Toast.makeText(
                     this,
-                    "Loading...",
+                    "Loading..." + percent,
                     Toast.LENGTH_LONG).show();
         }
 
