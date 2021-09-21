@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_main.xml" value="0.14030769642485683" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23125" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_main.xml" value="0.2436923148431724" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_user_dashboard.xml" value="0.11458333333333333" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/splash_screen.xml" value="0.11458333333333333" />
       </map>
     </option>
   </component>
