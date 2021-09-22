@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onboarding"
+    android:background="#5E17EB">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        />
+    <Button
+        android:id="@+id/skipbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SKIP"
+        android:onClick="skip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="10dp"
+        android:background="#00000000"
+        android:textColor="@color/white"
+        android:drawableEnd="@drawable/arrskip"
+        >
+
+    </Button>
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="409dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/loginbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="80dp"
+            android:text="LOGIN"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonstyle2">
+
+        </Button>
+        <Button
+            android:id="@+id/signupbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:text="SIGNUP"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonstyle">
+
+        </Button>
+
+
+        <LinearLayout
+            android:id="@+id/dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"></LinearLayout>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/arrback"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:lottie_rawRes="@raw/arrowfw"
+            app:lottie_colorFilter="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            app:lottie_autoPlay="true"
+            android:onClick="next"
+            app:lottie_loop="true"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
