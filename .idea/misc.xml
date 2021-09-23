@@ -3,14 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable-v24/ic_login_bk.xml" value="0.13240740740740742" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable-v24/login_shape_bk.xml" value="0.13240740740740742" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable/buttonstyle.xml" value="0.23125" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable/buttonstyle2.xml" value="0.23125" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23125" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_empty.xml" value="0.16246154322878156" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_login.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_main.xml" value="0.2436923148431724" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_signup.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_user_dashboard.xml" value="0.11458333333333333" />
-        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/onboardingactivity.xml" value="0.18461539003270633" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/layout_login.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/layout_register.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/onboardingactivity.xml" value="0.1" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/slides_layout.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/splash_screen.xml" value="0.11458333333333333" />
       </map>

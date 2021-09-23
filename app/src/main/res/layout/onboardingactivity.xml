@@ -56,6 +56,11 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="80dp"
             android:text="LOGIN"
+
+
+            android:onClick="setLogin"
+
+
             android:visibility="invisible"
             android:textColor="@color/white"
             android:background="@drawable/buttonstyle2">
@@ -68,6 +73,10 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="80dp"
             android:text="SIGNUP"
+
+            android:onClick="setLogin"
+
+
             android:visibility="invisible"
             android:textColor="@color/white"
             android:background="@drawable/buttonstyle">

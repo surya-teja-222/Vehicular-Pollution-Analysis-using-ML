@@ -55,6 +55,12 @@ public class onboarding extends AppCompatActivity {
         viewPager.setCurrentItem(current + 1);
     }
 
+    public void setLogin(View view){
+        startActivity(new Intent(this , LoginActivity.class));
+
+        finish();
+    }
+
     private void addDots(int position) {
 
         dots = new TextView[3];
