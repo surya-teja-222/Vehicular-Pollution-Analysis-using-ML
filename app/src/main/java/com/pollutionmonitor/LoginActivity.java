@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText username ;
     EditText password;
+    TextView incorrectPassword ;
 
     SharedPreferences isLoggedIn;
 
@@ -89,6 +90,8 @@ public class LoginActivity extends AppCompatActivity {
                 else{
                     System.out.println("Bro , incorrect e-mail /Password");
                     System.out.println("You Entered: Email :" + username.getText() +" , password :"+password.getText());
+                    incorrectPassword = findViewById(R.id.textView2);
+                    incorrectPassword.setVisibility(v.VISIBLE);
                 }
             }
         });

@@ -68,12 +68,13 @@
                         android:drawableStart="@drawable/ic_person"
                         android:drawableLeft="@drawable/ic_person"
                         android:drawablePadding="12dp"
-                        android:inputType="textEmailAddress"
                         android:hint="@string/hint_username"
                         android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
                         android:minWidth="320dp"
                         android:minHeight="50dp"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textColor="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.cardview.widget.CardView>
 
@@ -133,6 +134,17 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/button_sign_in" />
 
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="*Your email/passowrd doesn't seem to match."
+                android:textColor="@color/md_deep_orange_A700"
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/button_signup"
