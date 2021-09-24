@@ -14,6 +14,10 @@
         <activity
             android:name=".onboarding"
             android:exported="true" />
+        <activity android:name=".ForgotPasswordActivity"
+            android:exported="true"/>
+        <activity android:name=".SignupActivity"
+            android:exported="true"/>
         <activity
             android:name="LoginActivity"
             android:exported="true"

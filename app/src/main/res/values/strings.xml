@@ -24,7 +24,7 @@
 <!--    for the login screen-->
 
 
-    <string name="hint_username">Username</string>
+    <string name="hint_username">E-mail</string>
     <string name="hint_password">Password</string>
     <string name="button_sign_in">Sign in</string>
     <string name="button_sign_up">Sign up</string>

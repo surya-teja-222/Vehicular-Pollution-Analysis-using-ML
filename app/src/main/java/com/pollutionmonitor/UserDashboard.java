@@ -19,7 +19,7 @@ public class UserDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_user_dashboard);
 
         isLoggedIn = getSharedPreferences("isLoggedIn" , MODE_PRIVATE);
-        boolean isLogged = isLoggedIn.getBoolean("loggedIn" , false);
+        boolean isLogged = isLoggedIn.getBoolean("isLoggedIn" , false);
         if(!isLogged){
             Intent intent = new Intent(this ,LoginActivity.class);
             startActivity(intent);

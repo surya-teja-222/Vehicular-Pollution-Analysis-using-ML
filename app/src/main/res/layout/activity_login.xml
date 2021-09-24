@@ -68,6 +68,7 @@
                         android:drawableStart="@drawable/ic_person"
                         android:drawableLeft="@drawable/ic_person"
                         android:drawablePadding="12dp"
+                        android:inputType="textEmailAddress"
                         android:hint="@string/hint_username"
                         android:imeOptions="actionNext"
                         android:minWidth="320dp"
@@ -112,14 +113,15 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                style="@style/TextyButton"
                 android:id="@+id/button_forgot_password"
+                style="@style/TextyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:padding="10dp"
-                android:onClick="onClick"
                 android:layout_marginRight="24dp"
+
+
+                android:padding="10dp"
                 android:text="@string/text_forgot_password" />
 
             <Button
@@ -131,48 +133,16 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/button_sign_in" />
 
-            <LinearLayout
-                android:id="@+id/social_layout"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/text_signin_social_media"
-                    android:textColor="@color/md_black_1000"
-                    android:textSize="12sp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_margin="8dp"
-                        app:srcCompat="@drawable/ic_facebook"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp" />
-
-                    <ImageView
-                        android:layout_margin="8dp"
-                        app:srcCompat="@drawable/ic_twitter"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp" />
-                </LinearLayout>
-            </LinearLayout>
 
             <Button
-                style="@style/TextyButton"
                 android:id="@+id/button_signup"
+                style="@style/TextyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+
+
                 android:padding="20dp"
-                android:onClick="onClick"
                 android:text="@string/text_signin_signup" />
         </LinearLayout>
 
