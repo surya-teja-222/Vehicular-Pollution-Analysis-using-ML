@@ -9,9 +9,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="oath_client_id">1094361772158-5ffer5l7k3sni5bm6r4l780thp31hoq5.apps.googleusercontent.com</string>
 
 
-<!--    slides-layout // on boarding  -->
+    <!--    slides-layout // on boarding  -->
 
     <string name="first_onboard_h">Get Realtime\n Insights about your\n Vehicle Condition</string>
     <string name="first_onboard_p">Check &amp; Predict your Vehicular Pollution\n with our Easy to Use interactive tool.</string>
@@ -21,7 +22,7 @@
     <string name="third_onboard_p">Login or Sign-Up for FREE!</string>
 
 
-<!--    for the login screen-->
+    <!--    for the login screen-->
 
 
     <string name="hint_username">E-mail</string>
@@ -43,6 +44,10 @@
     <string name="hint_email">Email</string>
     <string name="hint_phone">Phone</string>
     <string name="hint_confirm_password">Confirm Password</string>
+    <string name="title_activity_userdashboard2">Userdashboard2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_user_dashboard">UserDashboard</string>
 
 
 </resources>

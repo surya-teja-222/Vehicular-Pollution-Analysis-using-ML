@@ -18,9 +18,9 @@
         android:scrollbarThumbVertical="@null">
 
         <LinearLayout
-            android:layout_centerVertical="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:orientation="vertical">
 
             <ImageView
@@ -146,6 +146,24 @@
                 android:textColor="@color/md_deep_orange_A700"
                 android:visibility="invisible" />
 
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:shadowColor="@color/md_amber_100"
+                android:text="Sign In with Google"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/googleLogin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/google" />
+
+
             <Button
                 android:id="@+id/button_signup"
                 style="@style/TextyButton"
@@ -156,6 +174,7 @@
 
                 android:padding="20dp"
                 android:text="@string/text_signin_signup" />
+
         </LinearLayout>
 
     </RelativeLayout>

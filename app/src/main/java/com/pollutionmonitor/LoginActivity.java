@@ -4,15 +4,30 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -20,6 +35,7 @@ import kotlin.jvm.internal.Intrinsics;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final int RC_SIGN_IN =120 ;
     Button forgotPasswordB ;
     Button signUpB ;
     Button signIn;
@@ -30,19 +46,25 @@ public class LoginActivity extends AppCompatActivity {
 
     SharedPreferences isLoggedIn;
 
+    private FirebaseAuth mAuth ;
+    GoogleSignInClient mGoogleSignInClient;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            startActivity(new Intent(LoginActivity.this , UserDashboard.class));
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setStatusBarTransparent(this);
 
-//        basic verification whether the user is logged in or not:
-        isLoggedIn = getSharedPreferences("isLoggedIn" , MODE_PRIVATE);
-        boolean isLogged = isLoggedIn.getBoolean("isLoggedIn" , false);
-        if(isLogged){
-            startActivity(new Intent(this , UserDashboard.class));
-            finish();
-        }
+        mAuth = FirebaseAuth.getInstance() ;
 
 
 //        INTENTS
@@ -52,7 +74,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 System.out.println("Bro , u Clicked Password Reset.");
                 startActivity(new Intent(v.getContext() , ForgotPasswordActivity.class));
+
+
             }
+
         });
         signUpB.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -67,32 +92,37 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.et_password);
         signIn = findViewById(R.id.button_signin);
 
-        signIn.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
-                System.out.println("Bro , u Tried Logging In.\n Let me check if credentials are matching");
-                String uname = "surya";
-                String enteredEmail = username.getText().toString();
-                String enteredPassword = password.getText().toString();
-                Boolean boo = (enteredPassword.equals(uname)) ;
-                Boolean boo2 = (enteredEmail.equals(uname)) ;
+        signIn.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signInWithEmailAndPassword(username.getText().toString(), password.getText().toString())
+                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
 
-                if(boo & boo2){
-                    System.out.println("Bro , Success");
-                    isLoggedIn = getSharedPreferences("isLoggedIn" , MODE_PRIVATE);
-                    SharedPreferences.Editor editor = isLoggedIn.edit();
-                    editor.putBoolean("isLoggedIn" , true);
-                    editor.commit();
-                    startActivity(new Intent(v.getContext() , UserDashboard.class));
-                    finish();
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    startActivity(new Intent(view.getContext() , UserDashboard.class));
+//                                    updateUI(user);
+                                } else {
+                                    // If sign in fails, display a message to the user.
 
+                                    Toast.makeText(LoginActivity.this, task.getException().getMessage().toString(),
+                                            Toast.LENGTH_LONG).show();
 
-                }
-                else{
-                    System.out.println("Bro , incorrect e-mail /Password");
-                    System.out.println("You Entered: Email :" + username.getText() +" , password :"+password.getText());
-                    incorrectPassword = findViewById(R.id.textView2);
-                    incorrectPassword.setVisibility(v.VISIBLE);
-                }
+                                }
+                            }
+                        });
+            }
+        });
+
+        createRequest();
+
+        findViewById(R.id.googleLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signIn();
             }
         });
 
@@ -100,8 +130,60 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void createRequest() {
+        // Google signIn pop up builder
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("1094361772158-5ffer5l7k3sni5bm6r4l780thp31hoq5.apps.googleusercontent.com")
+                .requestEmail()
+                .build();
 
-    private final void setStatusBarTransparent(AppCompatActivity activity) {
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
+
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Toast.makeText(this, e.getMessage() , Toast.LENGTH_LONG ).show();
+            }
+        }
+    }
+
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            startActivity(new Intent( getApplicationContext(), UserDashboard.class));
+
+                        } else {
+                            Toast.makeText(LoginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+    private final void setStatusBarTransparent(@NonNull AppCompatActivity activity) {
          activity.getWindow().addFlags(67108864);
          Window var10000 = activity.getWindow();
          Intrinsics.checkNotNullExpressionValue(var10000, "activity.window");

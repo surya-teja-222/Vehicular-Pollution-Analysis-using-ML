@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1094361772158",
+    "project_id": "pollution-monitor-d707f",
+    "storage_bucket": "pollution-monitor-d707f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094361772158:android:d3dced18febceb2e82682f",
+        "android_client_info": {
+          "package_name": "com.pollutionmonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094361772158-5ffer5l7k3sni5bm6r4l780thp31hoq5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pollutionmonitor",
+            "certificate_hash": "986969db6fa4b368a28f7be1b06652c6f6cd02da"
+          }
+        },
+        {
+          "client_id": "1094361772158-nq8dtnannqetf11vncoqrvafgunbkkj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrumnUNKSi2VgJwMbNBcGhOQ-OsuCkW2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094361772158-nq8dtnannqetf11vncoqrvafgunbkkj3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
