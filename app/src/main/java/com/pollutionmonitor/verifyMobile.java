@@ -28,6 +28,9 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
+import com.google.firebase.database.DatabaseReference;
+import com.pollutionmonitor.helperclass.*;
+
 public class verifyMobile extends AppCompatActivity {
     private FirebaseAuth mAuth ;
 
@@ -35,6 +38,8 @@ public class verifyMobile extends AppCompatActivity {
     EditText otp ;
     ProgressBar bar ;
     String Vercode ;
+    String email , name, mobile , password;
+    private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +53,10 @@ public class verifyMobile extends AppCompatActivity {
         
 
         Bundle extras = getIntent().getExtras();
-        String email = extras.getString("email");
-        String name = extras.getString("name");
-        String mobile = extras.getString("mobile");
+        email = extras.getString("email");
+        name = extras.getString("name");
+        mobile = extras.getString("mobile");
+        password = extras.getString("pass");
 
         
 
@@ -108,28 +114,59 @@ public class verifyMobile extends AppCompatActivity {
 
     private  void verifyCode(String code) {
         PhoneAuthCredential credential  = PhoneAuthProvider.getCredential(Vercode , code);
-        signInByCredential(credential) ;
+//        signInByCredential(credential) ;
+        signUpWithEmailAndPassword(email , mobile , name , password);
+
     }
 
-    private void signInByCredential(PhoneAuthCredential credential) {
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        firebaseAuth.signInWithCredential(credential)
+    private void signUpWithEmailAndPassword(String email, String mobile, String name, String password) {
+//        creating a user account with email and password.
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(verifyMobile.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if(task.isSuccessful()){
-                            Intent i = new Intent(getApplicationContext() , UserDashboard.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK) ;
-                            startActivity(i);
-
-                        }
-                        else{
-                            Toast.makeText(verifyMobile.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+//                                    Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            System.out.println(user);
+                            System.out.println(user);System.out.println(user);
+                            startActivity(new Intent(verifyMobile.this , UserDashboard.class));
+                        } else {
+                            // If sign in fails, display a message to the user.
+//                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(verifyMobile.this, task.getException().getMessage().toString().toString(),
+                                    Toast.LENGTH_LONG).show();
+//                                    updateUI(null);
                         }
 
 
                     }
                 });
+
     }
+
+
+//    private void signInByCredential(PhoneAuthCredential credential) {
+//
+//        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+//        firebaseAuth.signInWithCredential(credential)
+//                .addOnCompleteListener(verifyMobile.this, new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//
+//                        if(task.isSuccessful()){
+//                            Intent i = new Intent(getApplicationContext() , UserDashboard.class);
+//                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK) ;
+//                            startActivity(i);
+//
+//                        }
+//                        else{
+//                            Toast.makeText(verifyMobile.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                        }
+//
+//
+//                    }
+//                });
+//    }
 }
