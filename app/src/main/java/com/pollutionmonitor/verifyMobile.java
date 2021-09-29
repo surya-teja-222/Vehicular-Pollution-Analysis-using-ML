@@ -146,7 +146,7 @@ public class verifyMobile extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             System.out.println(user);
                             System.out.println(user);System.out.println(user);
-                            startActivity(new Intent(verifyMobile.this , UserDashboard.class));
+                            startActivity(new Intent(verifyMobile.this , postSignUp1.class));
                         } else {
                             // If sign in fails, display a message to the user.
 //                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());

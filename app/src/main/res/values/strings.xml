@@ -50,4 +50,13 @@
     <string name="title_activity_user_dashboard">UserDashboard</string>
 
 
+    <string-array name="vehicle_class">
+        <item>Motorcycles with an engine capacity of 50 cc or less</item>
+        <item>Motorcycles with any engine capacity, but without gears, including mopeds and scooters</item>
+        <item>Light motor vehicles that are used for non-transport purposes</item>
+        <item>Motorcycles with gear, Motorcycles with a capacity of 50CC or more, Light Motor Vehicles (LMVs) including cars</item>
+        <item>All motorcycles even with gear</item>
+    </string-array>
+
+
 </resources>
