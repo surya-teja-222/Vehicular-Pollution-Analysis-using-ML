@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,6 +37,7 @@ public class verifyMobile extends AppCompatActivity {
 
     Button verify ;
     EditText otp ;
+    TextView resendOTP ;
     ProgressBar bar ;
     String Vercode ;
     String email , name, mobile , password;
@@ -49,6 +51,7 @@ public class verifyMobile extends AppCompatActivity {
         verify = findViewById(R.id.verifyPhone) ;
         otp    = findViewById(R.id.verifyM) ;
         bar    = findViewById(R.id.progressBar) ;
+        resendOTP = findViewById(R.id.textView14);
 
         
 
@@ -61,6 +64,18 @@ public class verifyMobile extends AppCompatActivity {
         
 
         sendVerificationCodeToUser(mobile) ;
+
+        resendOTP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent verifyMob = new Intent(getApplicationContext() , verifyMobile.class);
+                verifyMob.putExtra("email" , email);
+                verifyMob.putExtra("name" , name);
+                verifyMob.putExtra("mobile" , mobile);
+                verifyMob.putExtra("pass" , password);
+                startActivity(verifyMob);
+            }
+        });
 
 
     }
