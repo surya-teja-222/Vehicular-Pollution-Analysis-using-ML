@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -53,6 +54,9 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
 
 //        add a code here to save all the data to the Firestore database.
 //        important task due!!!
+//        after completing this page, send the user to the page where he need to upload his RC pic for registration.
+
+        startActivity(new Intent(getApplicationContext() , postSignUp2.class));
 
 
     }
