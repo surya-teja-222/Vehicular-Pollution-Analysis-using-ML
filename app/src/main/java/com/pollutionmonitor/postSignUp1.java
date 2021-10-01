@@ -28,6 +28,7 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
     private  int year , day , month ;
     private int sYear, sDay , sMonth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +57,14 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
 //        important task due!!!
 //        after completing this page, send the user to the page where he need to upload his RC pic for registration.
 
-        startActivity(new Intent(getApplicationContext() , postSignUp2.class));
+
+        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext() , postSignUp2.class));
+            }
+        });
+//        startActivity(new Intent(getApplicationContext() , postSignUp2.class));
 
 
     }

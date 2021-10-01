@@ -56,4 +56,22 @@
         android:text="Enter your vehicle Registration number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="253dp"
+        android:text="submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="your data will be processed according to terms and conditions of pollumeter"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="692dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
