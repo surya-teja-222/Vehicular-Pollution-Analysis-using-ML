@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,12 +28,18 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
     private TextView dateView ;
     private  int year , day , month ;
     private int sYear, sDay , sMonth;
+    private String choosenItem ;
+    private String selectedDate;
+    Boolean checked;
+    CheckBox checkBox;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_sign_up1);
+//      check box :
+        checkBox = findViewById(R.id.checkBox);
 
 //        dateView = findViewById(R.id.textView14);
         calendar = Calendar.getInstance() ;
@@ -61,7 +68,14 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext() , postSignUp2.class));
+                checked = checkBox.isChecked();
+
+                Intent intent = new Intent(getApplicationContext() , postSignUp2.class);
+                intent.putExtra("checked", checked);
+                intent.putExtra("Date of Buy", selectedDate);
+                intent.putExtra("Vehicle Class", choosenItem);
+                startActivity(intent);
+                finish();
             }
         });
 //        startActivity(new Intent(getApplicationContext() , postSignUp2.class));
@@ -103,6 +117,7 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
                     System.out.println(sDay+"/" +sMonth+"/" + sYear) ;
                     TextView xx = findViewById(R.id.textView18) ;
                     xx.setText(sDay+"/" +sMonth+"/" + sYear);
+                    selectedDate = sDay+"/" +sMonth+"/" + sYear;
 
                 }
             };
@@ -111,6 +126,7 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String item = adapterView.getItemAtPosition(i).toString();
         Toast.makeText(this, item, Toast.LENGTH_LONG).show();
+        choosenItem = item;
     }
 
     @Override

@@ -30,6 +30,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.pollutionmonitor.helperclass.*;
 
 public class verifyMobile extends AppCompatActivity {
@@ -41,7 +42,8 @@ public class verifyMobile extends AppCompatActivity {
     ProgressBar bar ;
     String Vercode ;
     String email , name, mobile , password;
-    private DatabaseReference mDatabase;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,6 +148,8 @@ public class verifyMobile extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             System.out.println(user);
                             System.out.println(user);System.out.println(user);
+                            Toast.makeText(getApplicationContext(), "User Verified Successfully", Toast.LENGTH_SHORT).show();
+                            addToDb(email , name,  mobile , password ,user.getUid());
                             startActivity(new Intent(verifyMobile.this , postSignUp1.class));
                         } else {
                             // If sign in fails, display a message to the user.
@@ -161,27 +165,13 @@ public class verifyMobile extends AppCompatActivity {
 
     }
 
+    private void addToDb(String email, String name, String mobile, String password ,String Uid) {
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("Users");
+        userDetails userDetail = new userDetails(Uid ,name ,email , password , mobile);
+        reference.child(Uid).setValue(userDetail);
+    }
 
-//    private void signInByCredential(PhoneAuthCredential credential) {
-//
-//        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-//        firebaseAuth.signInWithCredential(credential)
-//                .addOnCompleteListener(verifyMobile.this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//
-//                        if(task.isSuccessful()){
-//                            Intent i = new Intent(getApplicationContext() , UserDashboard.class);
-//                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK) ;
-//                            startActivity(i);
-//
-//                        }
-//                        else{
-//                            Toast.makeText(verifyMobile.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                        }
-//
-//
-//                    }
-//                });
-//    }
+
+
 }

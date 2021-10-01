@@ -101,6 +101,7 @@ public class SignupActivity extends AppCompatActivity {
                     verifyMob.putExtra("mobile" , mobile.getText().toString());
                     verifyMob.putExtra("pass" , passOne.getText().toString());
                     startActivity(verifyMob);
+                    signUpBtn.setText("Sign Up");
                 }
 
 
