@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
                 else{
-                    Intent intent = new Intent(MainActivity.this , UserDashboard.class);
+                    Intent intent = new Intent(MainActivity.this , userDashboard.class);
                     startActivity(intent);
                     finish();
                 }

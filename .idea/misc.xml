@@ -8,6 +8,7 @@
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable/buttonstyle.xml" value="0.23125" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable/buttonstyle2.xml" value="0.23125" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23125" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_account_created.xml" value="0.18461539003270633" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_empty.xml" value="0.16246154322878156" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_forgot_password.xml" value="0.15507692762747333" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_login.xml" value="0.2436923148431724" />
@@ -16,6 +17,13 @@
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_post_sign_up2.xml" value="0.2436923148431724" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_signup.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/activity_user_dashboard.xml" value="0.11458333333333333" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/dash_layout1.xml" value="0.1" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/dash_layout2.xml" value="0.1911231884057971" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/dash_layout3.xml" value="0.1911231884057971" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/fragment_sub_page01.xml" value="0.19701086956521738" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/fragment_sub_page02.xml" value="0.19701086956521738" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/fragment_sub_page03.xml" value="0.19701086956521738" />
+        <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/fragment_user_dashboard.xml" value="0.1911231884057971" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/layout_login.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/layout_register.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/onboardingactivity.xml" value="0.1" />

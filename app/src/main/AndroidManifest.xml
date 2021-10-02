@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PollutionMonitor">
         <activity
+            android:name=".userDashboard"
+            android:exported="true"
+            android:label="@string/title_activity_user_dashboard"
+             />
+        <activity
+            android:name=".accountCreated"
+            android:exported="true" />
+        <activity
             android:name=".postSignUp2"
             android:exported="true" />
         <activity
@@ -22,9 +29,6 @@
             android:exported="true" />
         <activity
             android:name=".verifyMobile"
-            android:exported="true" />
-        <activity
-            android:name=".UserDashboard"
             android:exported="true" />
         <activity
             android:name=".onboarding"
@@ -55,3 +59,5 @@
     </application>
 
 </manifest>
+
+<!--/android:theme="@style/Theme.PollutionMonitor.NoActionBar"-->

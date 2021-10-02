@@ -44,6 +44,8 @@ public class postSignUp2 extends AppCompatActivity {
     FirebaseAuth mAuth;
     StorageReference ref;
 
+    Boolean success = false;
+
     private Uri uri;
 
 
@@ -70,12 +72,18 @@ public class postSignUp2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 vehicleNumber = num.getText().toString();
+
                 addDetailsToDatabase(vehicleClass , isVehicleMaintained , dateOfPurchase , vehicleNumber);
 //                REQUIRED:
 //                ADD THE IMAGE TO STORAGE AND LINK TO DATABASE.
 //                INTENT TO NEXT SCREEN.
                 if(uri != null){
                     uploadToFirebase(uri);
+                    if(success = true){
+                        Intent intent = new Intent(getApplicationContext(), accountCreated.class);
+                        startActivity(intent);
+                        finish();
+                    }
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Please select a file", Toast.LENGTH_SHORT).show();
@@ -163,6 +171,7 @@ public class postSignUp2 extends AppCompatActivity {
                         reference = rootNode.getReference("user-rc");
                         reference.child(uid).setValue(url);
                         Toast.makeText(getApplicationContext(), "Success!!", Toast.LENGTH_SHORT).show();
+                        success = true;
                     }
                 });
 

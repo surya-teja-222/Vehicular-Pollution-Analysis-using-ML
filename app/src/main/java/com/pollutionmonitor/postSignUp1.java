@@ -30,7 +30,7 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
     private int sYear, sDay , sMonth;
     private String choosenItem ;
     private String selectedDate;
-    Boolean checked;
+    String checked;
     CheckBox checkBox;
 
 
@@ -68,8 +68,11 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checked = checkBox.isChecked();
-
+                if(checkBox.isChecked()){
+                    checked = "true";
+                }
+                else
+                    checked ="false";
                 Intent intent = new Intent(getApplicationContext() , postSignUp2.class);
                 intent.putExtra("checked", checked);
                 intent.putExtra("Date of Buy", selectedDate);

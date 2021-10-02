@@ -43,7 +43,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            startActivity(new Intent(SignupActivity.this , UserDashboard.class));
+            startActivity(new Intent(SignupActivity.this , userDashboard.class));
         }
     }
 
