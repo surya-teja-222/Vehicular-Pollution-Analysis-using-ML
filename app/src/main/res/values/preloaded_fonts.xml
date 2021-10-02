@@ -2,7 +2,9 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/amaranth_bold</item>
+        <item>@font/chela_one</item>
         <item>@font/droid_sans_mono</item>
+        <item>@font/galdeano</item>
         <item>@font/inder</item>
         <item>@font/roboto_mono</item>
     </array>

@@ -6,83 +6,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
+
     tools:context=".postSignUp1">
 
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="311dp"
-        android:layout_height="66dp"
+        android:layout_width="273dp"
+        android:layout_height="50dp"
         android:backgroundTint="#F8291A"
-        android:fontFamily="@font/inder"
-        android:text="Congratulations, Your account is up and ready to run, few more steps before having full acess to pollumeter."
-        android:textColor="#E6E6E3"
+        android:fontFamily="@font/chela_one"
+        android:text="Your account is up and ready to run, few more steps before having full acess to pollumeter."
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
-
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_mono"
+        android:fontFamily="@font/chela_one"
         android:text="Give us some insights about ur vehicle"
-        android:textColor="#FAF6F6"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.291"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.167" />
 
-    <TextView
-        android:id="@+id/textView17"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inder"
-        android:text="When approximately did you purchase your vehicle"
-        android:textColor="#FAF6F6"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
+        android:layout_height="wrap_content">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="is ur vehicle maintained?"
-        android:textColor="#FAF6F6"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="518dp" />
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="580dp" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="setDate"
-
-        android:text="Pick a date"
+        android:backgroundTint="#895DD6"
+        android:text="Done"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.983" />
+
+
 
     <TextView
         android:id="@+id/textView18"
@@ -90,13 +81,14 @@
         android:layout_height="wrap_content"
         android:shadowColor="#FAF6F6"
         android:text="Selected date"
-        android:textColor="#FAF6F6"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintVertical_bias="0.761" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -107,32 +99,73 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background=""
         android:text="class of your vehicle"
-        android:textColor="#FAF6F6"
+        android:textColor="#000000"
         android:textSize="16sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.337"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.277"
-        tools:layout_editor_absoluteX="133dp" />
+        app:layout_constraintVertical_bias="0.232" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:shadowColor="#FAF6F6"
+        android:shadowColor="#000000"
         android:text="TextView"
-        android:textColor="#FAF6F6"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="140dp"
+        android:layout_height="61dp"
+        app:srcCompat="@drawable/congo"
+        tools:layout_editor_absoluteX="-27dp"
+        tools:layout_editor_absoluteY="3dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greenbg"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="-205dp"
+        tools:layout_editor_absoluteY="167dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inder"
+        android:text="When approximately did you purchase your vehicle"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+    <ImageView
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cal2"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="383dp" />
 
     <!--    <ImageView-->
 <!--        android:id="@+id/imageView3"-->
