@@ -16,12 +16,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.pollutionmonitor.ui.main.SectionsPagerAdapter;
 import com.pollutionmonitor.databinding.ActivityUserDashboardBinding;
 
 public class userDashboard extends AppCompatActivity {
 
     private ActivityUserDashboardBinding binding;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,13 @@ public class userDashboard extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = binding.fab;
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user == null){
+            startActivity(new Intent(getApplicationContext() , LoginActivity.class));
+            finish();
+        }
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

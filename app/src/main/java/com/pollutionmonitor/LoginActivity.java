@@ -160,8 +160,11 @@ public class LoginActivity extends AppCompatActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-                Toast.makeText(this, e.getMessage() , Toast.LENGTH_LONG ).show();
+                Toast.makeText(this, e.getMessage().toString() , Toast.LENGTH_LONG ).show();
             }
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "wait, finding what's wrong", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -177,7 +180,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent( getApplicationContext(), userDashboard.class));
 
                         } else {
-                            Toast.makeText(LoginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, task.getException().getMessage().toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
