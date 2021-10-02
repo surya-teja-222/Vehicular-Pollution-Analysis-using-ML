@@ -68,18 +68,19 @@ public class subPage01 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        View view = inflater.inflate(R.layout.fragment_sub_page01, container, false);
         firebaseAuth = FirebaseAuth.getInstance();
-//        signOut = (Button) getActivity().findViewById(R.id.button);
-//        signOut = (Button) getView().findViewById(R.id.button123);
-//        signOut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                firebaseAuth.signOut();
-//                startActivity(new Intent(getContext(), LoginActivity.class));
-//            }
-//        });
+        signOut = view.findViewById(R.id.button123);
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firebaseAuth.signOut();
+                startActivity(new Intent(getContext(), LoginActivity.class));
+            }
+        });
 
 
-        return inflater.inflate(R.layout.fragment_sub_page01, container, false);
+        return view;
     }
 }
