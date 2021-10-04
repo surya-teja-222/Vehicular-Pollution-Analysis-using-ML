@@ -33,19 +33,20 @@
         android:fontFamily="@font/chela_one"
         android:text="Give us some insights about ur vehicle"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.291"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.165" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -55,10 +56,10 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.826" />
+        app:layout_constraintVertical_bias="0.818" />
 
     <Button
         android:id="@+id/button3"
@@ -68,12 +69,10 @@
         android:text="Done"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.983" />
-
-
+        app:layout_constraintVertical_bias="0.976" />
 
     <TextView
         android:id="@+id/textView18"
@@ -85,37 +84,38 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.761" />
+        app:layout_constraintVertical_bias="0.726" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="227dp"
+        android:layout_height="32dp"
+        android:backgroundTint="#D66BE8"
+        android:foregroundTint="#D66BE8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background=""
-        android:text="class of your vehicle"
+        android:fontFamily="@font/lusitana_bold"
+        android:text="Choose your vehicle class"
         android:textColor="#000000"
-        android:textSize="16sp"
 
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.337"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.232" />
+        app:layout_constraintVertical_bias="0.281" />
 
     <TextView
         android:id="@+id/textView"
@@ -150,22 +150,45 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inder"
-        android:text="When approximately did you purchase your vehicle"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:fontFamily="@font/lusitana_bold"
+        android:text="Vehicle purchase date"
         android:textColor="#000000"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="329dp" />
+        android:textSize="19sp"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="310dp" />
 
     <ImageView
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/cal2"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="383dp" />
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="354dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.361"
+        app:srcCompat="@drawable/car123" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="159dp"
+        android:layout_height="53dp"
+        android:text="Click on the calender icon to choose the date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.632" />
 
     <!--    <ImageView-->
 <!--        android:id="@+id/imageView3"-->

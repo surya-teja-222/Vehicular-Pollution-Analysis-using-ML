@@ -29,9 +29,10 @@
         <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_mail.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/layout/activity_account_created.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.3515825517470958" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_post_sign_up1.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_post_sign_up1.xml" value="0.2520833333333333" />
         <entry key="app/src/main/res/layout/activity_post_sign_up2.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_user_dashboard.xml" value="0.3415507489434686" />
