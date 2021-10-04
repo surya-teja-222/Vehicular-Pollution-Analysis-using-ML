@@ -6,7 +6,9 @@
         <item>@font/droid_sans_mono</item>
         <item>@font/galdeano</item>
         <item>@font/inder</item>
+        <item>@font/inika_bold</item>
         <item>@font/lusitana_bold</item>
+        <item>@font/roboto_medium</item>
         <item>@font/roboto_mono</item>
     </array>
 </resources>
