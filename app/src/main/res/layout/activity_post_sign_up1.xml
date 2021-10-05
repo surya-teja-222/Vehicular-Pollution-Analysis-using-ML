@@ -104,11 +104,9 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background=""
+
         android:fontFamily="@font/lusitana_bold"
         android:text="Choose your vehicle class"
-        android:textColor="#000000"
-
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
