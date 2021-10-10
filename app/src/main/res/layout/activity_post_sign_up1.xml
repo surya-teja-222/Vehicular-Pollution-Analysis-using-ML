@@ -41,12 +41,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.165" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -141,15 +135,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.005"
         app:srcCompat="@drawable/congo" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/greenbg"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="-205dp"
-        tools:layout_editor_absoluteY="167dp" />
 
     <TextView
         android:id="@+id/textView17"
