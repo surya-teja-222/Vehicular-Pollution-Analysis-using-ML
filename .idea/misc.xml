@@ -36,11 +36,16 @@
         <entry key="app/src/main/res/layout/activity_post_sign_up1.xml" value="0.2520833333333333" />
         <entry key="app/src/main/res/layout/activity_post_sign_up2.xml" value="0.2140625" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_user_dashboard.xml" value="0.3415507489434686" />
+        <entry key="app/src/main/res/layout/activity_user_dashboard.xml" value="0.4061855670103093" />
         <entry key="app/src/main/res/layout/activity_verify_mobile.xml" value="0.2520833333333333" />
+        <entry key="app/src/main/res/layout/fragment_sub_page01.xml" value="0.25104166666666666" />
+        <entry key="app/src/main/res/layout/fragment_sub_page02.xml" value="0.25104166666666666" />
+        <entry key="app/src/main/res/layout/fragment_sub_page03.xml" value="0.25104166666666666" />
+        <entry key="app/src/main/res/layout/fragment_user_dashboard.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/onboardingactivity.xml" value="0.335" />
         <entry key="app/src/main/res/layout/slides_layout.xml" value="0.3149096355446109" />
         <entry key="app/src/main/res/layout/splash_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2671875" />
       </map>
     </option>
   </component>
@@ -53,7 +58,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.335" />
+        <option name="scale" value="0.24817518248175183" />
       </ProjectState>
     </option>
   </component>
