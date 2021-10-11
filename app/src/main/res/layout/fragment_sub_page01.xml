@@ -1,182 +1,375 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0000"
+
     android:textAlignment="center">
 
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView7"-->
+    <!--        android:layout_width="195dp"-->
+    <!--        android:layout_height="47dp"-->
+
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:text="TS34C0000"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="34sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.925"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.127" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView12"-->
+    <!--        android:layout_width="163dp"-->
+    <!--        android:layout_height="45dp"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:fontFamily="@font/roboto_medium"-->
+    <!--        android:text="REG NO."-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="34sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.064"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.126" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView25"-->
+    <!--        android:layout_width="341dp"-->
+    <!--        android:layout_height="37dp"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:fontFamily="@font/lusitana_bold"-->
+    <!--        android:text="Pollution released in last hour"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.289" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView27"-->
+    <!--        android:layout_width="59dp"-->
+    <!--        android:layout_height="28dp"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:fontFamily="@font/amaranth_bold"-->
+    <!--        android:text="CO2"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.195"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.454" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView28"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:fontFamily="@font/amaranth_bold"-->
+    <!--        android:text="SO2"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.195"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.557" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView29"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:fontFamily="@font/amaranth_bold"-->
+    <!--        android:text="NO2"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.197"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.66" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView30"-->
+    <!--        android:layout_width="108dp"-->
+    <!--        android:layout_height="32dp"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:fontFamily="sans-serif"-->
+    <!--        android:text="TextView"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.818"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.454" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView31"-->
+    <!--        android:layout_width="108dp"-->
+    <!--        android:layout_height="37dp"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:text="TextView"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.818"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.553" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView32"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:text="TextView"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.794"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.658" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView33"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/rounded_corner"-->
+    <!--        android:fontFamily="casual"-->
+    <!--        android:text="YOUR VEHICLE IS SAFE"-->
+    <!--        android:textColor="#FDFEFE"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.452"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.862" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView8"-->
+    <!--        android:layout_width="86dp"-->
+    <!--        android:layout_height="81dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.455"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.773"-->
+    <!--        app:srcCompat="@drawable/outline_directions_car_white_24" />-->
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="43dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="195dp"
-        android:layout_height="47dp"
-
-        android:background="@drawable/rounded_corner"
-        android:text="TS34C0000"
-        android:textAlignment="center"
-        android:textColor="#FDFEFE"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:layout_marginTop="40sp"
+        android:layout_marginLeft="20sp"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:text="Your Vehicle : AP05CY5599" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="163dp"
-        android:layout_height="45dp"
-        android:background="@drawable/rounded_corner"
-        android:fontFamily="@font/roboto_medium"
-        android:text="REG NO."
-        android:textAlignment="center"
-        android:textColor="#FDFEFE"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="341dp"
-        android:layout_height="37dp"
-        android:background="@drawable/rounded_corner"
-        android:fontFamily="@font/lusitana_bold"
-        android:text="Pollution released in last hour"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="59dp"
-        android:layout_height="28dp"
-        android:background="@drawable/rounded_corner"
-        android:fontFamily="@font/amaranth_bold"
-        android:text="CO2"
-        android:textColor="#FDFEFE"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
-
-    <TextView
-        android:id="@+id/textView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
-        android:fontFamily="@font/amaranth_bold"
-        android:text="SO2"
-        android:textColor="#FDFEFE"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+        android:layout_marginTop="30sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="50sp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="As per our recent data from your Vehicle last recieved at 14:22" />
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
-        android:fontFamily="@font/amaranth_bold"
-        android:text="NO2"
-        android:textColor="#FDFEFE"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.66" />
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="126dp"
+            android:layout_marginTop="40sp"
+            android:background="@drawable/border"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            >
 
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="108dp"
-        android:layout_height="32dp"
-        android:background="@drawable/rounded_corner"
-        android:fontFamily="sans-serif"
-        android:text="TextView"
-        android:textColor="#FDFEFE"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="108dp"
-        android:layout_height="37dp"
-        android:background="@drawable/rounded_corner"
-        android:text="TextView"
-        android:textColor="#FDFEFE"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553" />
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
-        android:text="TextView"
-        android:textColor="#FDFEFE"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.794"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_marginTop="5sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40sp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="CO2" />
 
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
-        android:fontFamily="casual"
-        android:text="YOUR VEHICLE IS SAFE"
-        android:textColor="#FDFEFE"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40sp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="SO2" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="86dp"
-        android:layout_height="81dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773"
-        app:srcCompat="@drawable/outline_directions_car_white_24" />
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40sp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="NO2" />
+            </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:textColor="@color/md_red_400"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5sp"
+                    android:layout_height="40sp"
+                    android:gravity="center"
+                    android:text="300ppm " />
+                <!--bro , here add an arrow up-->
+                <TextView
+                    android:id="@+id/textView33"
+                    android:textColor="@color/md_green_400"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40sp"
+                    android:gravity="center"
+                    android:text="2ppm" />
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:textColor="@color/md_red_400"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40sp"
+                    android:gravity="center"
+                    android:text="250ppm" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_marginTop="5sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40sp"
+                    android:src="@drawable/arrowup" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40sp"
+                    android:src="@drawable/arrowdown" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrowup" />
+            </LinearLayout>
+        </LinearLayout>
+
+    <Space
+        android:layout_width="409dp"
+        android:layout_height="62dp" />
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="148dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:background="@android:color/holo_green_dark">
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:textStyle="bold"
+
+            android:layout_marginTop="30sp"
+            android:layout_marginRight="90sp"
+            android:text="Your Vehicle is safe , We are monitoring it round the clock"
+            android:textColor="@color/white"
+            android:fontFamily="@font/amaranth_bold"
+            android:textFontWeight="600" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/safe"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="137dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:background="@color/md_red_400">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="30sp"
+
+            android:layout_marginRight="90sp"
+
+            android:fontFamily="@font/amaranth_bold"
+            android:gravity="right"
+            android:text="ATTENTION REQUIRED!\nYour Vehicle is at risk."
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/danger" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

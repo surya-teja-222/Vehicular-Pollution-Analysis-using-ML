@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences onBoardingscreen;
-
+    private int INITIAL_LOADING_TIME = 1000; // 5100 originally
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-        } , 5100);
+        } , INITIAL_LOADING_TIME);
 
 
 
