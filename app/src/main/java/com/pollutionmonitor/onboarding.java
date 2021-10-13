@@ -57,7 +57,10 @@ public class onboarding extends AppCompatActivity {
 
     public void setLogin(View view){
         startActivity(new Intent(this , LoginActivity.class));
-
+        finish();
+    }
+    public void setSignUp(View view){
+        startActivity(new Intent(this , SignupActivity.class));
         finish();
     }
 

@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,6 +66,7 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
 //        after completing this page, send the user to the page where he need to upload his RC pic for registration.
 
 
+        ImageView cal = findViewById(R.id.button4);
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,9 +80,9 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
                 intent.putExtra("Date of Buy", selectedDate);
                 intent.putExtra("Vehicle Class", choosenItem);
                 startActivity(intent);
-                finish();
             }
         });
+
 //        startActivity(new Intent(getApplicationContext() , postSignUp2.class));
 
 
@@ -90,9 +92,6 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
 
     public void setDate(View view){
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca",
-                Toast.LENGTH_SHORT)
-                .show();
     }
     @Override
     protected Dialog onCreateDialog(int id) {
@@ -118,8 +117,7 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
                     sMonth = arg2+1 ;
                     sYear = arg1 ;
                     System.out.println(sDay+"/" +sMonth+"/" + sYear) ;
-                    TextView xx = findViewById(R.id.textView18) ;
-                    xx.setText(sDay+"/" +sMonth+"/" + sYear);
+
                     selectedDate = sDay+"/" +sMonth+"/" + sYear;
 
                 }

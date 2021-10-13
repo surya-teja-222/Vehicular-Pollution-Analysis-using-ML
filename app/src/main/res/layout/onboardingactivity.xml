@@ -74,7 +74,7 @@
             android:layout_marginRight="80dp"
             android:text="SIGNUP"
 
-            android:onClick="setLogin"
+            android:onClick="setSignUp"
 
 
             android:visibility="invisible"

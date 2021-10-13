@@ -13,11 +13,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -66,6 +68,17 @@ public class postSignUp2 extends AppCompatActivity {
         isVehicleMaintained = extras.getString("checked");
         dateOfPurchase = extras.getString("Date of Buy");
 
+
+        TextView tAndC = findViewById(R.id.textView20);
+        tAndC.setText(Html.fromHtml("'Your data will be processed according to <a href=\"www.suryateja222.me\"><u>terms and conditions</u></a> of Pollumeter'"));
+
+        tAndC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+                startActivity(browserIntent);
+            }
+        });
 
 
         findViewById(R.id.button5).setOnClickListener(new View.OnClickListener() {
