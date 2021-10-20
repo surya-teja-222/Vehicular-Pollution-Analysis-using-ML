@@ -28,7 +28,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.pollutionmonitor.helperclass.*;
 import org.jetbrains.annotations.NotNull;
 
 import kotlin.jvm.internal.Intrinsics;
@@ -46,7 +52,10 @@ public class LoginActivity extends AppCompatActivity {
 
     SharedPreferences isLoggedIn;
 
+    FirebaseDatabase firebaseDatabase;
+
     private FirebaseAuth mAuth ;
+    String pNum;
     GoogleSignInClient mGoogleSignInClient;
 
     @Override
@@ -95,25 +104,33 @@ public class LoginActivity extends AppCompatActivity {
         signIn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAuth.signInWithEmailAndPassword(username.getText().toString(), password.getText().toString())
-                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
 
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    startActivity(new Intent(view.getContext() , userDashboard.class));
+                if(validateEmail() && validatePassword()   )
+
+                    mAuth.signInWithEmailAndPassword(username.getText().toString(), password.getText().toString())
+                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        Intent i = new Intent(view.getContext() , userDashboard.class);
+                                        i.putExtra("existing" ,true);
+                                        startActivity(i);
+
+
 //                                    updateUI(user);
-                                } else {
-                                    // If sign in fails, display a message to the user.
+                                    } else {
+                                        // If sign in fails, display a message to the user.
 
-                                    Toast.makeText(LoginActivity.this, task.getException().getMessage().toString(),
-                                            Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LoginActivity.this, task.getException().getMessage().toString(),
+                                                Toast.LENGTH_LONG).show();
 
+                                    }
                                 }
-                            }
-                        });
+                            });
             }
         });
 
@@ -127,6 +144,36 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+
+    }
+
+    private boolean validateEmail() {
+        String dat = username.getText().toString();
+        if(dat ==null){
+            username.setError("Email can't be null");
+            return false;
+        }
+        if(dat.isEmpty()){
+            username.setError("Email can't be null");
+            return false;
+        }
+        username.setError(null);
+        return true;
+    }
+
+    private boolean validatePassword() {
+        String dat = password.getText().toString();
+        if(dat ==null){
+            password.setError("Email can't be null");
+
+            return false;
+        }
+        if(dat.isEmpty()){
+            password.setError("Email can't be null");
+            return false;
+        }
+        password.setError(null);
+        return true;
 
     }
 
@@ -187,16 +234,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private final void setStatusBarTransparent(@NonNull AppCompatActivity activity) {
-         activity.getWindow().addFlags(67108864);
-         Window var10000 = activity.getWindow();
-         Intrinsics.checkNotNullExpressionValue(var10000, "activity.window");
-         View var2 = var10000.getDecorView();
-         Intrinsics.checkNotNullExpressionValue(var2, "activity.window.decorView");
-         var2.setSystemUiVisibility(8192);
-         var10000 = activity.getWindow();
-         Intrinsics.checkNotNullExpressionValue(var10000, "activity.window");
-         var10000.setStatusBarColor(-1);
+        activity.getWindow().addFlags(67108864);
+        Window var10000 = activity.getWindow();
+        Intrinsics.checkNotNullExpressionValue(var10000, "activity.window");
+        View var2 = var10000.getDecorView();
+        Intrinsics.checkNotNullExpressionValue(var2, "activity.window.decorView");
+        var2.setSystemUiVisibility(8192);
+        var10000 = activity.getWindow();
+        Intrinsics.checkNotNullExpressionValue(var10000, "activity.window");
+        var10000.setStatusBarColor(-1);
 
-   }
+    }
 
 }

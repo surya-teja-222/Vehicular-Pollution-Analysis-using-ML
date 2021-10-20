@@ -4,14 +4,23 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +30,10 @@ import com.google.firebase.auth.FirebaseAuth;
 public class subPage01 extends Fragment {
 
     private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
+    TextView name ;
     Button signOut;
+    String[] list = {"cvcv"};
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,17 +83,39 @@ public class subPage01 extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_sub_page01, container, false);
         firebaseAuth = FirebaseAuth.getInstance();
-//        signOut = view.findViewById(R.id.button123);
-//        signOut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                firebaseAuth.signOut();
-//                startActivity(new Intent(getContext(), LoginActivity.class));
-//            }
-//        });
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        name = view.findViewById(R.id.tvName);
+        getName();
+
+
 
 
 
         return view;
+    }
+
+    public void getName(){
+
+        DatabaseReference databaseReference = firebaseDatabase.getReference("Users").child(firebaseAuth.getUid());
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list[0] = (snapshot.child("name").getValue().toString());
+                name.setText("Welcome , "+list[0]);
+
+                System.out.println(list[0]);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        System.out.println(list[0]);
+
+
     }
 }

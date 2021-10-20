@@ -37,7 +37,23 @@
                 />
 
 
+
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            >
+
+        </Space>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="4dip"
+            android:background="#3E2929"
+
+            />
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,6 +82,10 @@
             android:layout_marginTop="20sp"
             android:backgroundTint="#6B8AE8"
             android:foregroundTint="#D66BE8" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            ></Space>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,6 +118,10 @@
             android:text="Click on the symbol above to pick"
             android:layout_gravity="center"
             />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            ></Space>
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"

@@ -170,8 +170,13 @@ public class verifyMobile extends AppCompatActivity {
         reference = rootNode.getReference("Users");
         userDetails userDetail = new userDetails(Uid ,name ,email , password , mobile);
         reference.child(Uid).setValue(userDetail);
+        reference = rootNode.getReference("NoOfTimesLoggedIn");
+        numberOfTimesLoggedIn n = new numberOfTimesLoggedIn(1);
+
+        reference.child(Uid).setValue(n);
     }
 
 
 
 }
+

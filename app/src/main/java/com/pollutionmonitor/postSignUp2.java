@@ -75,7 +75,7 @@ public class postSignUp2 extends AppCompatActivity {
         tAndC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pollumeter.suryateja222.me"));
                 startActivity(browserIntent);
             }
         });
