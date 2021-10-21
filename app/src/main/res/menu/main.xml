@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="home"
-        android:id="@+id/homemenu"></item>
+
+    <item android:title="Profile">
+
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/profile"
+                    android:icon="@drawable/ic_baseline_account_circle_24"
+                    android:title="User Profile"></item>
+                <item
+                    android:id="@+id/vehicle"
+                    android:icon="@drawable/ic_baseline_directions_bike_24"
+                    android:title="Vehicle "></item>
+
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Others">
+
+
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/about"
+                    android:icon="@drawable/ic_about"
+                    android:title="About"></item>
+                <item
+                    android:id="@+id/nav_home13"
+                    android:icon="@drawable/ic_tandc"
+                    android:title="Terms of Use"></item>
+                <item
+                    android:id="@+id/nav_social"
+                    android:icon="@drawable/ic_social"
+                    android:title="Social"></item>
+                <item
+                    android:id="@+id/nav_home14"
+                    android:icon="@drawable/ic_baseline_arrow_back_24"
+                    android:title="Logout"></item>
+
+
+            </group>
+
+
+        </menu>
+
+
+    </item>
+
 
 </menu>
