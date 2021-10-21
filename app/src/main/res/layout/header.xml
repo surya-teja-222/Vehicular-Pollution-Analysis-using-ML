@@ -9,25 +9,14 @@
     >
 
 
-
-    <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:src="@drawable/app_logo_2" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Traveling"
-        android:textSize="24sp"
-        app:fontFamily="@font/chela_one" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="www.taimoorsikander.com"
-        android:textSize="14sp"
-        app:fontFamily="@font/galdeano" />
+        android:layout_marginLeft="20sp"
+        android:gravity="bottom"
+        android:text="Pollumeter"
+        android:fontFamily="@font/aladin"
+        android:textSize="25sp"></TextView>
 
 
 

@@ -3,6 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/acme</item>
         <item>@font/acmee</item>
+        <item>@font/aladin</item>
         <item>@font/amaranth_bold</item>
         <item>@font/chela_one</item>
         <item>@font/droid_sans_mono</item>

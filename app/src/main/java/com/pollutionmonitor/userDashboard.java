@@ -2,6 +2,7 @@ package com.pollutionmonitor;
 
 import android.content.Intent;
 import android.graphics.drawable.DrawableWrapper;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -83,6 +84,7 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.profile);
 
 
 
@@ -120,6 +122,36 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.home :
+
+                break;
+            case R.id.vehicle:
+                Intent intent1 = new Intent(getApplicationContext(),Vehicle_details.class);
+                startActivity(intent1);
+                break;
+            case R.id.profile:
+                Intent intent = new Intent(getApplicationContext(),Profile_page.class);
+                startActivity(intent);
+                break;
+            case R.id.about:
+            case R.id.nav_social:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://suryateja222.me"));
+                startActivity(browserIntent);
+                break;
+            case R.id.termsAndC:
+                Intent browserIntent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pollumeter.suryateja222.me"));
+                startActivity(browserIntent1);
+                break;
+            case R.id.nav_logout:
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.signOut();
+                startActivity(new Intent(getApplicationContext() , LoginActivity.class));
+                finish();
+                break;
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }

@@ -15,6 +15,10 @@
                     android:id="@+id/vehicle"
                     android:icon="@drawable/ic_baseline_directions_bike_24"
                     android:title="Vehicle "></item>
+                <item
+                    android:id="@+id/home"
+                    android:icon="@drawable/home_icon"
+                    android:title="Home "></item>
 
             </group>
         </menu>
@@ -32,7 +36,7 @@
                     android:icon="@drawable/ic_about"
                     android:title="About"></item>
                 <item
-                    android:id="@+id/nav_home13"
+                    android:id="@+id/termsAndC"
                     android:icon="@drawable/ic_tandc"
                     android:title="Terms of Use"></item>
                 <item
@@ -40,8 +44,9 @@
                     android:icon="@drawable/ic_social"
                     android:title="Social"></item>
                 <item
-                    android:id="@+id/nav_home14"
-                    android:icon="@drawable/ic_baseline_arrow_back_24"
+                    android:id="@+id/nav_logout"
+
+                    android:icon="@drawable/logout"
                     android:title="Logout"></item>
 
 
