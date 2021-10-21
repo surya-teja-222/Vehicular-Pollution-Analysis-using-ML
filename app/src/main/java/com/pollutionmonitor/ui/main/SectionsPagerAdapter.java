@@ -44,6 +44,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 fragment = new subPage03();
                 break;
+            case 3:
+                fragment = new subPage01();
+                break;
 
         }
         return fragment;
