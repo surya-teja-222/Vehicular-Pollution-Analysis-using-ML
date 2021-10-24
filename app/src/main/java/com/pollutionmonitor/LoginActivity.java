@@ -180,7 +180,7 @@ public class LoginActivity extends AppCompatActivity {
     private void createRequest() {
         // Google signIn pop up builder
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("1094361772158-5ffer5l7k3sni5bm6r4l780thp31hoq5.apps.googleusercontent.com")
+                .requestIdToken("1094361772158-nq8dtnannqetf11vncoqrvafgunbkkj3.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
 
@@ -207,7 +207,7 @@ public class LoginActivity extends AppCompatActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-                Toast.makeText(this, e.getMessage().toString() , Toast.LENGTH_LONG ).show();
+                Toast.makeText(this, e.getMessage().toString() +"  "+ e.getLocalizedMessage().toString() , Toast.LENGTH_LONG ).show();
             }
         }
         else{

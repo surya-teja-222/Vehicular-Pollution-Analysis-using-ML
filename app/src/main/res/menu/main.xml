@@ -36,6 +36,10 @@
                     android:icon="@drawable/ic_about"
                     android:title="About"></item>
                 <item
+                    android:id="@+id/settings"
+                    android:icon="@drawable/ic_gear"
+                    android:title="Settings"></item>
+                <item
                     android:id="@+id/termsAndC"
                     android:icon="@drawable/ic_tandc"
                     android:title="Terms of Use"></item>

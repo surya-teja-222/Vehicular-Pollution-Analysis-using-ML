@@ -124,7 +124,7 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.home :
-
+            default:
                 break;
             case R.id.vehicle:
                 Intent intent1 = new Intent(getApplicationContext(),Vehicle_details.class);
@@ -149,6 +149,10 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
                 startActivity(new Intent(getApplicationContext() , LoginActivity.class));
                 finish();
                 break;
+            case R.id.settings:
+                startActivity(new Intent(getApplicationContext() , settings.class));
+                finish();
+
 
         }
         drawerLayout.closeDrawer(GravityCompat.START);
