@@ -1,18 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Vehicle_details">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="202dp"
-        android:layout_marginEnd="79dp"
-        android:text="At Vehicle Details"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fece2f"
+            app:title="Vehicle Details"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_back_w"
+
+            app:theme="@style/TransparentToolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#fece2f"
+            android:padding="20dp">
+
+
+            <ImageView
+                android:id="@+id/profile_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_car"
+
+                ></ImageView>
+
+            <TextView
+                android:id="@+id/vehicle_vehicleNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_img"
+                android:fontFamily="@font/bungee"
+                android:includeFontPadding="false"
+                android:text="NAME"
+                android:textSize="20sp"
+
+                />
+
+            <TextView
+                android:id="@+id/vehicle_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vehicle_vehicleNum"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_img"
+                android:includeFontPadding="false"
+                android:text="example@email.com"
+                android:textSize="14sp"
+
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50sp"
+            android:padding="20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/vehicle_vehicleNumEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:hint="Vehicle Number"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_baseline_directions_bike_24"
+                    android:drawablePadding="10dp"
+                    android:imeOptions="actionNext"
+
+                    android:text="Vehicle Number"></com.google.android.material.textfield.TextInputEditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/vehicle_class_editable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:hint="Vehicle Class"
+
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:editable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_about"
+                    android:drawablePadding="10dp"
+                    android:imeOptions="actionNext"
+
+                    android:text="Vehicle Class"></com.google.android.material.textfield.TextInputEditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/vehicle_date_non_editable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:hint="Date"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_calander"
+                    android:drawablePadding="10dp"
+                    android:imeOptions="actionDone"
+                    android:inputType="phone"
+                    android:editable="false"
+                    android:text="Date" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_marginTop="30sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fece2f"
+                android:fontFamily="@font/bungee"
+                android:onClick="update"
+                android:text="Update"></Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

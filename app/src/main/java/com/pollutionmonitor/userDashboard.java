@@ -60,6 +60,11 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
     String email;
     String mobile;
 
+//    user data fields
+    String veh_num;
+    String veh_class;
+    String veh_date;
+
 
 
     @Override
@@ -111,6 +116,23 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
         firebaseDatabase = FirebaseDatabase.getInstance();
 
 
+        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("vehicle-details").child(firebaseAuth.getUid());
+        reference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                System.out.println(snapshot);
+                veh_num = snapshot.child("vehicleNumber").getValue().toString();
+                veh_class = snapshot.child("vehicleClass").getValue().toString();
+                veh_date = snapshot.child("dateOfPurchase").getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 //        Getting User Data.
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseAuth.getUid());
         reference.addValueEventListener(new ValueEventListener() {
@@ -149,6 +171,9 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.vehicle:
                 Intent intent1 = new Intent(getApplicationContext(),Vehicle_details.class);
+                intent1.putExtra("veh_num",veh_num);
+                intent1.putExtra("veh_class",veh_class);
+                intent1.putExtra("veh_date",veh_date);
                 startActivity(intent1);
                 break;
             case R.id.profile:
@@ -176,7 +201,7 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.settings:
                 startActivity(new Intent(getApplicationContext() , settings.class));
-                finish();
+
 
 
         }

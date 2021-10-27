@@ -10,10 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fece2f"
+            app:title="Profile"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_back_w"
+
+            app:theme="@style/TransparentToolbar" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="250dp"
             android:background="#fece2f"
             android:padding="20dp">
 
@@ -35,7 +45,7 @@
                 android:layout_toRightOf="@+id/profile_img"
                 android:fontFamily="@font/bungee"
                 android:includeFontPadding="false"
-                android:text="Surya Teja"
+                android:text="NAME"
                 android:textSize="20sp"
 
                 />
@@ -48,7 +58,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/profile_img"
                 android:includeFontPadding="false"
-                android:text="suryatejareddy222@gmail.com"
+                android:text="example@email.com"
                 android:textSize="14sp"
 
                 />
@@ -59,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="50sp"
             android:padding="20dp">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -76,7 +87,9 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_person"
                     android:drawablePadding="10dp"
-                    android:text="Surya Teja Reddy"></com.google.android.material.textfield.TextInputEditText>
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:text="name"></com.google.android.material.textfield.TextInputEditText>
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +110,9 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_mail"
                     android:drawablePadding="10dp"
-                    android:text="suryatejareddy222@gmail.com"></com.google.android.material.textfield.TextInputEditText>
+                    android:imeOptions="actionNext"
+
+                    android:text="email"></com.google.android.material.textfield.TextInputEditText>
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -117,7 +132,9 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_phone"
                     android:drawablePadding="10dp"
-                    android:text="+916303471188"></com.google.android.material.textfield.TextInputEditText>
+                    android:imeOptions="actionDone"
+                    android:inputType="phone"
+                    android:text="Mobile"></com.google.android.material.textfield.TextInputEditText>
 
 
             </com.google.android.material.textfield.TextInputLayout>

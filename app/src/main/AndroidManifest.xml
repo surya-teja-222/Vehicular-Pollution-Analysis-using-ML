@@ -14,7 +14,9 @@
         android:theme="@style/Theme.PollutionMonitor">
         <activity
             android:name=".settings"
-            android:exported="false" />
+            android:exported="false"
+
+            android:label="Settings"/>
         <activity
             android:name=".Vehicle_details"
             android:exported="false" />
