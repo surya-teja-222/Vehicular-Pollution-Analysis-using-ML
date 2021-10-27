@@ -55,6 +55,13 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
     androidx.appcompat.widget.Toolbar title;
 
 
+//    User data Fields.
+    String uname;
+    String email;
+    String mobile;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,14 +105,28 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
         }
 
 
-        System.out.println(binding.getRoot().toString());
 
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        DatabaseReference databaseReference = firebaseDatabase.getReference("Users").child(firebaseAuth.getUid());
 
+//        Getting User Data.
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseAuth.getUid());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    System.out.println(snapshot);
+                    uname  = snapshot.child("name").getValue().toString();
+                    email  = snapshot.child("email").getValue().toString();
+                    mobile = snapshot.child("mobile").getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 
@@ -131,7 +152,11 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
                 startActivity(intent1);
                 break;
             case R.id.profile:
+
                 Intent intent = new Intent(getApplicationContext(),Profile_page.class);
+                intent.putExtra("uname" , uname);
+                intent.putExtra("email" , email);
+                intent.putExtra("mobile" , mobile);
                 startActivity(intent);
                 break;
             case R.id.about:
