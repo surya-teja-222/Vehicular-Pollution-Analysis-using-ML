@@ -81,4 +81,12 @@
     <string name="menu_slideshow">Slideshow</string>
 
 
+    <string-array name="notifications_arr">
+    <item>Once a day</item>
+    <item>As soon as the notification arrives</item>
+    <item>Never</item>
+    <item>twice a day</item>
+    </string-array>
+
+
 </resources>

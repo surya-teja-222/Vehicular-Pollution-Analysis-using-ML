@@ -25,5 +25,9 @@ public class settings extends AppCompatActivity {
         }));
 
 
+
+        getFragmentManager().beginTransaction().add(R.id.idFrameLayout, new settingsFragment()).commit();
+
+
     }
 }

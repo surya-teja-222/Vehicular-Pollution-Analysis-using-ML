@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="General">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notifications"
+            android:title="Enable Notifications"
+            android:textColor="@drawable/ic_back"
+
+            />
+        <ListPreference
+            android:defaultValue="1"
+            android:key="notifications_period"
+            android:summary="Click to Open"
+            android:dialogTitle="Double-tap to seek"
+            android:title="How Often do you wish to receive Notifications"
+            android:entries="@array/notifications_arr"
+            />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="vibrate"
+            android:title="Vibrate for Notifications"
+            android:textColor="@drawable/ic_back"
+
+            />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="sound"
+            android:title="Play default message tone for notifications"
+            android:textColor="@drawable/ic_back"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Account"
+        >
+
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
