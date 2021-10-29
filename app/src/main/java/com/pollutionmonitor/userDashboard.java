@@ -200,7 +200,12 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
                 finish();
                 break;
             case R.id.settings:
-                startActivity(new Intent(getApplicationContext() , settings.class));
+
+                Intent intent3 = new Intent(getApplicationContext() , settings.class);
+                intent3.putExtra("uname" , uname);
+                intent3.putExtra("email" , email);
+                intent3.putExtra("mobile" , mobile);
+                startActivity(intent3);
 
 
 

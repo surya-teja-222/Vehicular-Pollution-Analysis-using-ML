@@ -17,6 +17,7 @@
             android:dialogTitle="Double-tap to seek"
             android:title="How Often do you wish to receive Notifications"
             android:entries="@array/notifications_arr"
+            android:entryValues="@array/notifications_arr"
             />
 
         <SwitchPreference
@@ -29,16 +30,45 @@
         <SwitchPreference
             android:defaultValue="false"
             android:key="sound"
+
             android:title="Play default message tone for notifications"
             android:textColor="@drawable/ic_back"
             />
 
     </PreferenceCategory>
 
+
+
     <PreferenceCategory android:title="Account"
         >
+        <Preference android:title="Download Data"
+            android:key="download"
+            android:summary="Download your data associated with pollumeter."
+            >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.pollutionmonitor"
+                android:targetClass="com.pollutionmonitor.deleteAccount"
+                >
+            </intent>
+
+        </Preference>
+        <Preference android:title="Delete your Account"
+
+            android:key="Delete"
+            android:summary="Delete your Pollumeter Account."
+            >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.pollutionmonitor"
+                android:targetClass="com.pollutionmonitor.deleteAccount"
+
+                >
+
+            </intent>
 
 
+        </Preference>
 
     </PreferenceCategory>
 

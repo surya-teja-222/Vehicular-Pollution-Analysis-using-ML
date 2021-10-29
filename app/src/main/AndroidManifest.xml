@@ -13,10 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PollutionMonitor">
         <activity
+            android:name=".deleteAccount"
+            android:exported="false" />
+        <activity
             android:name=".settings"
             android:exported="false"
-
-            android:label="Settings"/>
+            android:label="Settings" />
         <activity
             android:name=".Vehicle_details"
             android:exported="false" />

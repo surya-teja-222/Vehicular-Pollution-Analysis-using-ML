@@ -17,8 +17,61 @@
         app:titleTextColor="@color/black" />
 
 
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="20dp"
+        >
+        <ImageView
+            android:id="@+id/profile_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_profile"
+
+            ></ImageView>
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/profile_img"
+            android:fontFamily="@font/bungee"
+            android:includeFontPadding="false"
+            android:text="NAME"
+            android:textSize="20sp"
+
+            />
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_name"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/profile_img"
+            android:includeFontPadding="false"
+            android:text="example@email.com"
+            android:textSize="14sp"
+
+            />
+    </RelativeLayout>
+
+
     <FrameLayout
         android:id="@+id/idFrameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+
+    </LinearLayout>
 </LinearLayout>
