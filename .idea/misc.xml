@@ -20,6 +20,8 @@
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/slides_layout.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/surya/AndroidStudioProjects/PollutionMonitor/app/src/main/res/layout/splash_screen.xml" value="0.11458333333333333" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/drawable/border.xml" value="0.23125" />
+        <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/drawable/divider_drawable.xml" value="0.23125" />
+        <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/drawable/divider_shape.xml" value="0.23125" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/drawable/rounded_corner.xml" value="0.18461539003270633" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/activity_account_created.xml" value="0.36923078006541266" />
@@ -42,10 +44,14 @@
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/fragment_3.xml" value="0.1" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/fragment_sub_page01.xml" value="0.1" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/fragment_sub_page02.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/fragment_sub_page03.xml" value="0.2436923148431724" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/fragment_user_dashboard.xml" value="0.1408514492753623" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/header.xml" value="0.1" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/menu.xml" value="0.1526268115942029" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/onboardingactivity.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/places.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/places_adapter.xml" value="0.4351949420442571" />
+        <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/places_recyclerview.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/signup1_update.xml" value="0.1" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/signup_2.xml" value="0.494769245287653" />
         <entry key="..\:/Users/surya/StudioProjects/Vehicular-Pollution-Analysis-using-ML/app/src/main/res/layout/slides_layout.xml" value="0.21510416666666668" />
