@@ -21,7 +21,7 @@
             android:layout_marginLeft="20sp"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="hmm,test"
+            android:text="Loading...."
             android:textSize="22sp"
             android:textColor="@color/black"
 
@@ -30,7 +30,7 @@
             android:id="@+id/val"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hmm,test"
+            android:text="Nan"
             android:layout_marginLeft="80sp"
             android:gravity="right"
             android:layout_gravity="right"

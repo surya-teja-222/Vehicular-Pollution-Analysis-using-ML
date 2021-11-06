@@ -6,27 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".subPage03">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         >
+
         <LinearLayout
-            android:id="@+id/layout3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150sp"
-                android:padding="20dp"
                 android:layout_gravity="center"
                 android:background="#fece2f"
-                >
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/city_name"
@@ -51,12 +48,32 @@
 
                     />
             </RelativeLayout>
+
             <Space
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="80sp"
-                />
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/loading"
+                layout="@layout/places_adapter"></include>
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="***This data is obtained from a third party service and handled according to the terms and conditions previously stated. \nAir quality is measured by Daily Air Quality Index.The index is numbered 1-10 and divided into four bands, low (1) to very high (10).\n(1) implies clean &amp;safe, and (10) implies highly polluted and hazardous. " />
         </LinearLayout>
+
     </ScrollView>
 
 

@@ -1,7 +1,15 @@
 package com.pollutionmonitor;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,16 +30,20 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.annotations.NotNull;
 import com.google.gson.JsonObject;
 
-import org.json.JSONArray;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
+import java.util.concurrent.Executor;
 
 
 /**
@@ -53,8 +65,18 @@ public class subPage03 extends Fragment {
     //    declared global variables
     TextView city_name;
     TextView city_name_aqi;
+
     JSONObject stateName;
     int arr_length;
+    final ArrayList<String> cityNameG = new ArrayList<>(50);
+    final ArrayList<String> cityAQIG = new ArrayList<>(50);
+    final ArrayList<dataItem> data = new ArrayList<>(50);
+    Location location_g ;
+
+    private FusedLocationProviderClient fusedLocationClient;
+
+    final int itemCount = 0;
+    private int queueCount = 0;
 
 
     public subPage03() {
@@ -98,27 +120,38 @@ public class subPage03 extends Fragment {
         city_name = view.findViewById(R.id.city_name);
         city_name_aqi = view.findViewById(R.id.city_name_aqi);
 
+//        network queue
         RequestQueue queue = Volley.newRequestQueue(getContext());
+
 
 //        getting data at user's location.
         String url = "https://api.airvisual.com/v2/nearest_city?key=4ed7c2d0-ba8c-4a3c-a2f1-be2e26506c4d";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+        queueCount++;
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        System.out.println("Response: " + response.toString() + "\n" + response.getClass().getSimpleName());
+//                        System.out.println("Response: " + response.toString() + "\n" + response.getClass().getSimpleName());
+//                        try {
+//                            String state = response.getJSONObject("data").getString("state");
+//                            String aqi_val = response.getJSONObject("data")
+//                                    .getJSONObject("current")
+//                                    .getJSONObject("pollution")
+//                                    .getString("aqius");
+//                            city_name.setText(state);
+//                            city_name.setTextColor(getResources().getColor(R.color.white));
+//                            city_name_aqi.setText(aqi_val + " AQI");
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
                         try {
                             String state = response.getJSONObject("data").getString("state");
-                            String aqi_val = response.getJSONObject("data")
-                                    .getJSONObject("current")
-                                    .getJSONObject("pollution")
-                                    .getString("aqius");
-                            city_name.setText(state);
-                            city_name.setTextColor(getResources().getColor(R.color.white));
-                            city_name_aqi.setText(aqi_val + " AQI");
+                            updateLocationData(queue , state);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+
                     }
                 }, new Response.ErrorListener() {
                     @Override
@@ -129,97 +162,7 @@ public class subPage03 extends Fragment {
 
         queue.add(jsonObjectRequest);
 
-//        getting the list of supported states in india
-//        url = "https://api.airvisual.com/v2/states?country=india&key=4ed7c2d0-ba8c-4a3c-a2f1-be2e26506c4d";
-//        JsonObjectRequest jsonObjectRequest2 = new JsonObjectRequest
-//                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        stateName = response;
-//                        try {
-//                            JSONArray array = (JSONArray) stateName.getJSONArray("data");
-//                            int array_len = array.length();
-//                            ArrayList<String> stateNames = new ArrayList<>(array_len);
-//                            ArrayList<String> stateNames_AQI = new ArrayList<>(array_len);
-//                            for (int i = 0; i < array_len; i++) {
-//                                JSONObject innerObj = array.getJSONObject(i);
-//                                for (Iterator it = innerObj.keys(); it.hasNext(); ) {
-//                                    String key = (String) it.next();
-//                                    System.out.println(innerObj.get(key));
-//                                    stateNames.add((String) innerObj.get(key));
-//                                }
-//                            }
-//
-//
-//
-////                            for (int i = 0; i < array_len; i++) {
-//////                                initially get supported cities. then find aqi of that city.
-////                                String url = "https://api.weatherapi.com/v1/current.json?key=9a018894cbc7409987765810210511&q=" + stateNames.get(i) + "&aqi=yes";
-////                                if(i == 10 || i == 14) {
-////                                    url = "https://api.weatherapi.com/v1/current.json?key=9a018894cbc7409987765810210511&q=" + stateNames.get(0) + "&aqi=yes";
-////                                }
-////
-////                                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-////                                        (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-////                                            @Override
-////                                            public void onResponse(JSONObject response) {
-////                                                String object = null;
-////                                                try {
-////                                                    object = response.getJSONObject("current").getJSONObject("air_quality").getString("gb-defra-index");
-////                                                } catch (JSONException e) {
-////                                                    e.printStackTrace();
-////                                                }
-////                                                stateNames_AQI.add(object);
-////                                            }
-////                                        }, new Response.ErrorListener() {
-////
-////                                            @Override
-////                                            public void onErrorResponse(VolleyError error) {
-////                                                System.out.println(error.getCause().toString());
-////                                            }
-////                                        });
-////
-////                                queue.add(jsonObjectRequest);
-////                            }
-////                            LinearLayout mainLayout = (LinearLayout) view.findViewById(R.id.layout3);
-//////                            int array_len = stateNames.size();
-////                            for (int i = 0; i < array_len; i++) {
-////                                View myLayout = inflater.inflate(R.layout.places_adapter, mainLayout, false);
-////                                TextView textView = (TextView) myLayout.findViewById(R.id.tv);
-////                                TextView textView2 = (TextView) myLayout.findViewById(R.id.val);
-////
-////                                textView.setText(stateNames.get(i));
-////                                textView2.setText(stateNames_AQI.get(i));
-////                                mainLayout.addView(myLayout);
-////                            }
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//
-//                }, new Response.ErrorListener() {
-//
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        System.out.println(error.getCause().toString());
-//
-//                    }
-//                });
-//        queue.add(jsonObjectRequest2);
 
-
-
-
-//        LinearLayout mainLayout = (LinearLayout) view.findViewById(R.id.layout3);
-//        for (int i = 0 ; i<10 ; i++)
-//        {
-//            LayoutInflater inflater2 = getLayoutInflater();
-//            View myLayout = inflater.inflate(R.layout.places_adapter, mainLayout, false);
-//            TextView textView = (TextView) myLayout.findViewById(R.id.tv);
-//            textView.setText("New Layout " + i);
-//            mainLayout.addView(myLayout);
-//        }
 
 //        list of states in india
         String stateNames[] = new String[]{ "Andhra Pradesh",
@@ -259,16 +202,12 @@ public class subPage03 extends Fragment {
                 "Puducherry"} ;
 
 //        get aqi values based on the items in list
-        LinearLayout mainLayout = (LinearLayout) view.findViewById(R.id.layout3);
-        View myLayout = inflater.inflate(R.layout.places_adapter, mainLayout, false);
-        TextView textView = (TextView) myLayout.findViewById(R.id.tv);
-        TextView textView2 = (TextView) myLayout.findViewById(R.id.val);
 
-        textView.setText("Location");
-        textView2.setText("AQI(/10)");
-        mainLayout.addView(myLayout);
+
+
         for (int i = 0 ; i< stateNames.length ; i++)
         {
+            queueCount++;
             url = "https://api.weatherapi.com/v1/current.json?key=9a018894cbc7409987765810210511&q=" + stateNames[i] + "&aqi=yes";
             JsonObjectRequest jsonObjectRequest2 = new JsonObjectRequest
                     (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -282,15 +221,13 @@ public class subPage03 extends Fragment {
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
+                            cityNameG.add(state);
+                            cityAQIG.add(object);
+
+                            dataItem d = new dataItem(state , Integer.parseInt(object));
+                            data.add(d);
+
                             System.out.println(state +" : " +object);
-                            View myLayout = inflater.inflate(R.layout.places_adapter, mainLayout, false);
-                            TextView textView = (TextView) myLayout.findViewById(R.id.tv);
-                            TextView textView2 = (TextView) myLayout.findViewById(R.id.val);
-
-                            textView.setText(state);
-                            textView2.setText(object);
-                            mainLayout.addView(myLayout);
-
                         }
                     }, new Response.ErrorListener() {
 
@@ -302,8 +239,52 @@ public class subPage03 extends Fragment {
 
             queue.add(jsonObjectRequest2);
         }
+        queue.addRequestFinishedListener(new RequestQueue.RequestFinishedListener<Object>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onRequestFinished(Request<Object> request) {
+                queueCount--;
+                if(queueCount == 0)
+                {
+                    view.findViewById(R.id.loading).setVisibility(View.GONE);
+                    LinearLayout mainLayout0 = (LinearLayout) view.findViewById(R.id.layout3);
+                    View myLayout0 = inflater.inflate(R.layout.places_adapter, mainLayout0, false);
+                    TextView textView0 = (TextView) myLayout0.findViewById(R.id.tv);
+                    TextView textView20 = (TextView) myLayout0.findViewById(R.id.val);
+                    textView0.setText("State");
+                    textView20.setText("AQI(/10)");
+                    mainLayout0.addView(myLayout0);
 
+                    System.out.println("the queue count"+queueCount);
+                    postDataObtainedWork();
+                    LinearLayout mainLayout = (LinearLayout) view.findViewById(R.id.layout3);
 
+                    for (int i = 0; i < data.size(); i++) {
+                        View myLayout = inflater.inflate(R.layout.places_adapter, mainLayout, false);
+                        TextView textView = (TextView) myLayout.findViewById(R.id.tv);
+                        TextView textView2 = (TextView) myLayout.findViewById(R.id.val);
+
+                        dataItem item = data.get(i);
+                        if(item.getAqi() <= 3){
+                            textView.setTextColor(getResources().getColor(R.color.md_light_green_900));
+                            textView2.setTextColor(getResources().getColor(R.color.md_light_green_900));
+                        }
+                        else if (item.getAqi() <= 7){
+                            textView.setTextColor(getResources().getColor(R.color.md_blue_600));
+                            textView2.setTextColor(getResources().getColor(R.color.md_blue_600));
+                        }
+                        else{
+                            textView.setTextColor(getResources().getColor(R.color.md_red_900));
+                            textView2.setTextColor(getResources().getColor(R.color.md_red_900));
+                        }
+                        textView.setText(item.getCity());
+                        textView2.setText(Integer.toString(item.getAqi()));
+                        mainLayout.addView(myLayout);
+                    }
+//                    TextView textviewAdd = (TextView) view.findViewById(R.id.def_tv);
+                }
+            }
+        });
 
 //        LinearLayout mainLayout = (LinearLayout) view.findViewById(R.id.layout3);
 //        for (int i = 0; i < stateNames.length; i++) {
@@ -316,6 +297,72 @@ public class subPage03 extends Fragment {
 //        }
         return view;
 
+    }
+
+    private void updateLocationData(RequestQueue queue, String state) {
+        String url = "https://api.weatherapi.com/v1/current.json?key=9a018894cbc7409987765810210511&q=" + state + "&aqi=yes";
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        String object = null;
+                        try {
+                            object = response.getJSONObject("current").getJSONObject("air_quality").getString("gb-defra-index");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        city_name.setText(state);
+                        city_name.setTextColor(getResources().getColor(R.color.white));
+                        city_name_aqi.setText(object + " /10 AQI");
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error.getCause().toString());
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void postDataObtainedWork() {
+        System.out.println(cityNameG.size());
+        System.out.println(cityAQIG.size());
+        data.sort(Comparator.comparingInt(dataItem::getAqi));
+
+    }
+}
+
+
+class dataItem{
+    String City;
+    int aqi;
+    dataItem()
+    {
+
+    }
+    dataItem(String c , int a)
+    {
+        City = c; aqi = a;
+    }
+
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
+
+    public int getAqi() {
+        return aqi;
+    }
+
+    public void setAqi(int aqi) {
+        this.aqi = aqi;
     }
 }
 

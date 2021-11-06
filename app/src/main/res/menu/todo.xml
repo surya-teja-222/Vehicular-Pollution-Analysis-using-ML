@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<group>
+    <item android:title="VMSSA" />
+    <item android:title="127.0.0.1:58526"/>
+    <item android:title="adb connect 127.0.0.1:58526"/>
+</group>
+
+    <group>
+        <item android:title="change timeout in main activity"/>
+    </group>
+
+
+</menu>
