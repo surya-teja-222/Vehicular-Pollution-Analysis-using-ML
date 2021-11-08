@@ -146,7 +146,7 @@ public class subPage03 extends Fragment {
 //                        }
                         try {
                             String state = response.getJSONObject("data").getString("state");
-                            updateLocationData(queue , state);
+                            updateLocationData(queue , state , view);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -299,7 +299,7 @@ public class subPage03 extends Fragment {
 
     }
 
-    private void updateLocationData(RequestQueue queue, String state) {
+    private void updateLocationData(RequestQueue queue, String state , View view) {
         String url = "https://api.weatherapi.com/v1/current.json?key=9a018894cbc7409987765810210511&q=" + state + "&aqi=yes";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -314,6 +314,13 @@ public class subPage03 extends Fragment {
                         city_name.setText(state);
                         city_name.setTextColor(getResources().getColor(R.color.white));
                         city_name_aqi.setText(object + " /10 AQI");
+                        if(Integer.parseInt(object) <= 3)
+                            view.findViewById(R.id.aqi_good).setVisibility(View.VISIBLE);
+                        else if(Integer.parseInt(object) <= 7)
+                            view.findViewById(R.id.aqi_avg).setVisibility(View.VISIBLE);
+                        else
+                            view.findViewById(R.id.aqi_haz).setVisibility(View.VISIBLE);
+
 
                     }
                 }, new Response.ErrorListener() {

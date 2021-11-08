@@ -49,10 +49,75 @@
                     />
             </RelativeLayout>
 
-            <Space
+            <LinearLayout
+                android:id="@+id/aqi_good"
                 android:layout_width="match_parent"
-                android:layout_height="80sp"
-                android:visibility="gone" />
+                android:layout_height="200sp"
+                android:background="@color/md_green_500"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:visibility="gone"
+                >
+                <ImageView
+                    android:layout_width="200sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/walk_with_dog"
+
+                    />
+                <TextView
+                    android:layout_width="200sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:text="The weather outside appears to be great, Good time to take a walk."
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/aqi_avg"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:background="@color/md_blue_500"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:visibility="gone"
+                >
+                <ImageView
+                    android:layout_width="200sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/clock"
+
+                    />
+                <TextView
+                    android:layout_width="200sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:text="The Weather outside appears to be polluted, not recommended to stay out for longer hours. "
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/aqi_haz"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:background="@color/md_red_200"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:visibility="gone"
+                >
+                <ImageView
+                    android:layout_width="200sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/danger_haz"
+
+                    />
+                <TextView
+                    android:layout_width="200sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:text="The Weather outside is hazardous, not recommended to go out unless and until it's extremely improtant.."
+                    />
+            </LinearLayout>
 
             <include
                 android:id="@+id/loading"
