@@ -146,6 +146,10 @@ public class subPage03 extends Fragment {
 //                        }
                         try {
                             String state = response.getJSONObject("data").getString("state");
+                            if(state.equals("Telangana") ){
+                                state = "Andhra Pradesh";
+                            }
+
                             updateLocationData(queue , state , view);
                         } catch (JSONException e) {
                             e.printStackTrace();
