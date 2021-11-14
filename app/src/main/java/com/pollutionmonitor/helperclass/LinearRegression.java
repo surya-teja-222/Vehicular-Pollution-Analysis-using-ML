@@ -1,6 +1,7 @@
 package com.pollutionmonitor.helperclass;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -27,12 +28,17 @@ public class LinearRegression {
         x = xx ;
         y = yy ;
     }
-    LinearRegression()
+    LinearRegression(List<Integer> xx , List<Double> yy , int n)
+    {
+        x = xx ;
+        y = listDoubleToListInteger(yy) ;
+    }
+    public LinearRegression()
     {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private List<Double> predictForList(List<Integer> x) {
+    public List<Double> predictForList(List<Integer> x) {
         return IntStream.range(0, x.size())
                 .mapToObj(i -> predictForValue(x.get(i)))
                 .collect(Collectors.toList());
@@ -40,7 +46,7 @@ public class LinearRegression {
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private Double predictForValue(int predictForDependentVariable) {
+    public Double predictForValue(int predictForDependentVariable) {
         if (x.size() != y.size()){
             System.out.println(x.size() + " " + y.size());
             throw new IllegalStateException("Must have equal X and Y data points");
@@ -89,6 +95,8 @@ public class LinearRegression {
         return (slope * predictForDependentVariable) + intercept;
     }
 
+//    example of how to call this class
+
 //    @RequiresApi(api = Build.VERSION_CODES.N)
 //    public static void main(String[] args) {
 //        LinearRegression linearRegression = new LinearRegression();
@@ -96,4 +104,15 @@ public class LinearRegression {
 //        System.out.println(linearRegression.predictForValue(0));
 //        System.out.println(linearRegression.predictForList(asList(5,4,3,2,1,0,-1,-2,-3,-4,-5)));
 //    }
+
+
+    // List<Double > to List<Integer>
+    public static List<Integer> listDoubleToListInteger(List<Double> list) {
+        List<Integer> listInteger = new ArrayList<>();
+        for (Double d : list) {
+            listInteger.add(d.intValue());
+        }
+        return listInteger;
+    }
+
 }

@@ -6,10 +6,76 @@
     tools:context=".subPage02">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="ILLUSTRATIONS" />
+        >
+<!--        this Tv should be removed later-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/test"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:text="Trends from available Obtained Data" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:padding="30dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Until Today ||| Hydro Carbons (in ppm)"
+                    />
+                <com.github.mikephil.charting.charts.LineChart
+
+                    android:layout_marginTop="20sp"
+                    android:id="@+id/LineChart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:padding="30dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Until Today ||| % of CO (%)"
+                    />
+                <com.github.mikephil.charting.charts.LineChart
+
+                    android:layout_marginTop="20sp"
+                    android:id="@+id/LineChart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 
