@@ -40,7 +40,7 @@ public class subPage02 extends Fragment {
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
+     * @author Surya Teja.
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
      * @return A new instance of fragment subPage02.
@@ -67,10 +67,11 @@ public class subPage02 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_sub_page02, container, false);
-        firebaseAuth = FirebaseAuth.getInstance();
+
+//        code here!!!
+
+
 
         return view;
     }
