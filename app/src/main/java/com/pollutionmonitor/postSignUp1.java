@@ -126,7 +126,7 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String item = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(this, item, Toast.LENGTH_LONG).show();
+
         choosenItem = item;
     }
 

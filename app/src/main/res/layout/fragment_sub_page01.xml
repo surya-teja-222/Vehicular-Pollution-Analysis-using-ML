@@ -45,12 +45,13 @@
                 android:layout_marginRight="50sp"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:text="As per our recent data from your Vehicle last recieved at 14:22" />
+                android:text="As per the latest data received  " />
 
             <LinearLayout
                 android:layout_width="340dp"
                 android:layout_height="126dp"
                 android:layout_marginTop="40sp"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/border"
                 android:orientation="horizontal"
                 android:layout_marginLeft="10sp"
@@ -89,7 +90,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:gravity="center"
-                        android:text="NO2" />
+                        android:text="HC" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -104,7 +105,7 @@
                         android:layout_marginTop="5sp"
                         android:layout_height="40sp"
                         android:gravity="center"
-                        android:text="300ppm " />
+                        android:text="3.32% " />
                     <!--bro , here add an arrow up-->
                     <TextView
                         android:id="@+id/textView33"
@@ -120,7 +121,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="40sp"
                         android:gravity="center"
-                        android:text="250ppm" />
+                        android:text="6780ppm" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="30dp"
@@ -148,15 +149,15 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Space
-                android:layout_width="409dp"
-                android:layout_height="62dp" />
+
 
             <LinearLayout
+                android:id="@+id/id_green"
                 android:layout_width="410dp"
+                android:layout_marginTop="62dp"
                 android:layout_height="148dp"
                 android:orientation="vertical"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@android:color/holo_green_dark">
 
                 <TextView
@@ -183,10 +184,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/id_red"
                 android:layout_width="410dp"
                 android:layout_height="137dp"
                 android:orientation="vertical"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@color/md_red_400">
 
                 <TextView
@@ -210,10 +212,12 @@
                     android:src="@drawable/danger" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/id_blue"
                 android:layout_width="410dp"
                 android:layout_height="137dp"
                 android:orientation="vertical"
-                android:visibility="visible"
+                android:layout_marginBottom="50dp"
+                android:visibility="gone"
                 android:background="@color/md_blue_200">
 
                 <TextView
@@ -234,10 +238,7 @@
 
             </LinearLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                ></Space>
+
 
         </LinearLayout>
     </ScrollView>

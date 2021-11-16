@@ -146,7 +146,7 @@ public class postSignUp2 extends AppCompatActivity {
 
             }
             uri = intent.getData() ;
-            Toast.makeText(getApplicationContext(), uri.getPath(), Toast.LENGTH_SHORT).show();
+
         }
     }
 

@@ -16,8 +16,10 @@ import java.util.Random;
 public class accountCreated extends AppCompatActivity {
 
 
-    ProgressBar bar;
-    TextView barPer;
+    androidx.appcompat.widget.AppCompatButton button;
+
+
+    androidx.appcompat.widget.Toolbar title;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -25,30 +27,24 @@ public class accountCreated extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_created);
 
-        bar = findViewById(R.id.progressBar3);
-        barPer = findViewById(R.id.textView23);
-        bar.setVisibility(View.VISIBLE);
-        Random rnd = new Random();
-        int i = rnd.nextInt(40) +10;
-        bar.setProgress(i,true);
-        barPer.setText(i+"%");
-        int j = rnd.nextInt(40) + i;
+        title = findViewById(R.id.title);
+        title = findViewById(R.id.title);
 
+        setSupportActionBar(title);
 
-        new Handler().postDelayed(new Runnable() {
+        button = findViewById(R.id.butt) ;
+
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                bar.setProgress(j,true);
-                barPer.setText(j+"%");
-
-//                intent actions goes here, tbd after creating userDashboard activity.
-                startActivity(new Intent(getApplicationContext() , userDashboard.class));
-//
-//                bar.setVisibility(View.INVISIBLE);
-//                findViewById(R.id.textView22).setVisibility(View.INVISIBLE);
-//                finish();
+            public void onClick(View v) {
+                startActivity(new Intent(accountCreated.this , userDashboard.class));
+                finish();
             }
-        } , 1500);
+        });
+
+
+
+
 
     }
 }

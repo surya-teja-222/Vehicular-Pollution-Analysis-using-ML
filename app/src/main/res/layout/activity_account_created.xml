@@ -1,51 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#99D5BC90"
     tools:context=".accountCreated">
-    
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="176dp"
-        android:text="Account created successfully!"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center"
+        android:minHeight="?actionBarSize"
+        android:padding="@dimen/appbar_padding"
+        android:text="Account Created"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="266dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="536dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.331"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-10dp"
-        android:layout_marginEnd="72dp"
-        android:text="Creating an environment for you, stay tuned"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
+        android:orientation="horizontal"
+        >
 
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_profile"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="24dp"
+            android:text="Account Created \n Successfully!!!"
+            android:textColor="@color/black"
+            android:fontFamily="@font/acme"
+            />
+
+    </LinearLayout>
     <TextView
-        android:id="@+id/textView23"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="24dp"
-        android:text="0%"
-        app:layout_constraintBottom_toTopOf="@+id/textView22"
-        app:layout_constraintEnd_toEndOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#46639C"
+        android:layout_marginTop="50sp"
+        android:layout_gravity="center"
+        android:layout_marginRight="50sp"
+        android:layout_marginLeft="50sp"
+        android:fontFamily="@font/acme"
+        android:textSize="20dp"
+        android:text="A very warm welcome to you! It is lovely to have you among us!"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/butt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginTop="200sp"
+        android:layout_alignParentBottom="true"
+        android:text="CLICK TO GO TO DASHBOARD"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:background="@color/md_blue_900"
+        />
+
+
+</LinearLayout>

@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +30,7 @@ import com.pollutionmonitor.databinding.FragmentUserDashboardBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -133,7 +135,18 @@ public class subPage01 extends Fragment {
         });
 
 
+        LinearLayout linearLayout1 = view.findViewById(R.id.id_green);
+        LinearLayout linearLayout2 = view.findViewById(R.id.id_red);
+        LinearLayout linearLayout3 = view.findViewById(R.id.id_blue);
 
+        Random rnd = new Random();
+        int number = rnd.nextInt(2);
+        if(number == 0)
+            linearLayout1.setVisibility(View.VISIBLE);
+        else if (number == 1)
+            linearLayout2.setVisibility(View.VISIBLE);
+        else
+            linearLayout3.setVisibility(View.VISIBLE);
 
         return view;
     }
