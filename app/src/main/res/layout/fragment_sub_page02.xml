@@ -9,44 +9,42 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-<!--        this Tv should be removed later-->
+        android:layout_height="match_parent">
+        <!--        this Tv should be removed later-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/test"
-                android:layout_marginTop="40dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="20sp"
                 android:layout_gravity="center"
-                android:text="Trends from available Obtained Data" />
+                android:layout_marginTop="40dp"
+                android:text="Trends from available Obtained Data"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30sp"
-                android:padding="30dp"
                 android:orientation="vertical"
-                >
+                android:padding="30dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
                     android:text="Until Today ||| Hydro Carbons (in ppm)"
-                    />
+                    android:textColor="@color/black" />
+
                 <com.github.mikephil.charting.charts.LineChart
 
-                    android:layout_marginTop="20sp"
                     android:id="@+id/LineChart1"
                     android:layout_width="match_parent"
                     android:layout_height="220dp"
-                    />
+                    android:layout_marginTop="20sp" />
 
             </LinearLayout>
 
@@ -54,29 +52,99 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30sp"
-                android:padding="30dp"
                 android:orientation="vertical"
-                >
+                android:padding="30dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
                     android:text="Until Today ||| % of CO (%)"
-                    />
+                    android:textColor="@color/black" />
+
                 <com.github.mikephil.charting.charts.LineChart
 
-                    android:layout_marginTop="20sp"
                     android:id="@+id/LineChart2"
                     android:layout_width="match_parent"
                     android:layout_height="220dp"
-                    />
+                    android:layout_marginTop="20sp" />
 
             </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trends in CO %"
+                    android:textColor="@color/black" />
+
+                <com.github.mikephil.charting.charts.PieChart
+
+                    android:id="@+id/PieChart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="20sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trends in Hydro Carbons (in ppm %)"
+                    android:textColor="@color/black" />
+
+                <com.github.mikephil.charting.charts.PieChart
+
+                    android:id="@+id/PieChart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Radar Diagram stating safe levels in past 100 records"
+                    android:textColor="@color/black" />
+
+                <com.github.mikephil.charting.charts.RadarChart
+
+                    android:id="@+id/Radar1"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="20sp" />
+
+            </LinearLayout>
+
+
+
+
 
         </LinearLayout>
 
     </ScrollView>
-
 
 
 </FrameLayout>
