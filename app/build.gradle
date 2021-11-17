@@ -1,9 +1,16 @@
 plugins {
     id 'com.android.application'
+
+
 }
 
 android {
     compileSdk 31
+
+    lintOptions {
+        abortOnError false
+    }
+
 
     defaultConfig {
         applicationId "com.pollutionmonitor"
@@ -31,6 +38,9 @@ android {
 }
 
 dependencies {
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.0.1")
+
 
     implementation platform('com.google.firebase:firebase-bom:28.4.1')
     implementation 'com.google.firebase:firebase-analytics'
@@ -70,8 +80,11 @@ dependencies {
     implementation files('libs\\MPAndroidChart-v3.0.1.jar')
 
     testImplementation 'junit:junit:4.+'
+
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
 
 
 
