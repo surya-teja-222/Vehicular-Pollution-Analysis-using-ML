@@ -90,16 +90,20 @@ public class postSignUp2 extends AppCompatActivity {
 //                REQUIRED:
 //                ADD THE IMAGE TO STORAGE AND LINK TO DATABASE.
 //                INTENT TO NEXT SCREEN.
-                if(uri != null){
+
+                if(vehicleNumber.isEmpty()){
+                    Toast.makeText(postSignUp2.this, "Vehicle Number can't be empty", Toast.LENGTH_LONG).show();
+                }
+                else if(uri == null){
+                    Toast.makeText(getApplicationContext(), "Please select a file", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     uploadToFirebase(uri);
                     if(success = true){
                         Intent intent = new Intent(getApplicationContext(), accountCreated.class);
                         startActivity(intent);
                         finish();
                     }
-                }
-                else{
-                    Toast.makeText(getApplicationContext(), "Please select a file", Toast.LENGTH_SHORT).show();
                 }
 
             }

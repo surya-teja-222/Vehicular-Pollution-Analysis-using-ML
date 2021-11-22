@@ -77,7 +77,11 @@ public class SignupActivity extends AppCompatActivity {
                     errorLine.setVisibility(View.VISIBLE);
                 }
                 else if(mobile.getText().toString().equals(null)){
-                    errorLine.setText("*Enter a valid Name ");
+                    errorLine.setText("*Enter a valid mobile ");
+                    errorLine.setVisibility(View.VISIBLE);
+                }
+                else if(mobile.getText().toString().length() != 10){
+                    errorLine.setText("*Enter a valid mobile number.(10 digits) ");
                     errorLine.setVisibility(View.VISIBLE);
                 }
                 else if(passOne.getText().toString().equals(null)){
@@ -104,26 +108,6 @@ public class SignupActivity extends AppCompatActivity {
                     signUpBtn.setText("Sign Up");
                 }
 
-
-//                mAuth.createUserWithEmailAndPassword(email.getText().toString(), passOne.getText().toString())
-//                        .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
-//
-//                            @Override
-//                            public void onComplete(@NonNull Task<AuthResult> task) {
-//                                if (task.isSuccessful()) {
-//                                    // Sign in success, update UI with the signed-in user's information
-//
-//                                    FirebaseUser user = mAuth.getCurrentUser();
-////                                    updateUI(user);
-//                                } else {
-//                                    // If sign in fails, display a message to the user.
-////                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-//                                    Toast.makeText(SignupActivity.this, "Authentication failed.",
-//                                            Toast.LENGTH_SHORT).show();
-//                                    updateUI(null);
-//                                }
-//                            }
-//                        });
 
             }
         });

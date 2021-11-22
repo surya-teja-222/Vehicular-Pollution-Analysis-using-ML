@@ -24,13 +24,13 @@ import java.util.List;
 
 public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private DatePicker datePicker  ;
-    private Calendar calendar ;
-    private TextView dateView ;
-    private  int year , day , month ;
-    private int sYear, sDay , sMonth;
-    private String choosenItem ;
-    private String selectedDate;
+    private DatePicker datePicker;
+    private Calendar calendar;
+    private TextView dateView;
+    private int year, day, month;
+    private int sYear, sDay, sMonth;
+    private String choosenItem;
+    private String selectedDate ="";
     String checked;
     CheckBox checkBox;
 
@@ -43,10 +43,10 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
         checkBox = findViewById(R.id.checkBox);
 
 //        dateView = findViewById(R.id.textView14);
-        calendar = Calendar.getInstance() ;
+        calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
-        day   = calendar.get(Calendar.DAY_OF_MONTH);
+        day = calendar.get(Calendar.DAY_OF_MONTH);
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
@@ -70,16 +70,22 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(checkBox.isChecked()){
+                if (checkBox.isChecked()) {
                     checked = "true";
+                } else
+                    checked = "false";
+
+                if (choosenItem.equals("Choose")) {
+                    Toast.makeText(postSignUp1.this, "Please select Vehicle Type.", Toast.LENGTH_LONG).show();
+                } else if (selectedDate.isEmpty() | selectedDate.equals("")) {
+                    Toast.makeText(postSignUp1.this, "Choose a valid date.", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), postSignUp2.class);
+                    intent.putExtra("checked", checked);
+                    intent.putExtra("Date of Buy", selectedDate);
+                    intent.putExtra("Vehicle Class", choosenItem);
+                    startActivity(intent);
                 }
-                else
-                    checked ="false";
-                Intent intent = new Intent(getApplicationContext() , postSignUp2.class);
-                intent.putExtra("checked", checked);
-                intent.putExtra("Date of Buy", selectedDate);
-                intent.putExtra("Vehicle Class", choosenItem);
-                startActivity(intent);
             }
         });
 
@@ -89,10 +95,10 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
     }
 
 
-
-    public void setDate(View view){
+    public void setDate(View view) {
         showDialog(999);
     }
+
     @Override
     protected Dialog onCreateDialog(int id) {
         // TODO Auto-generated method stub
@@ -103,6 +109,7 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
         }
         return null;
     }
+
     private DatePickerDialog.OnDateSetListener myDateListener = new
             DatePickerDialog.OnDateSetListener() {
                 @Override
@@ -113,12 +120,12 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
                     // arg2 = month
                     // arg3 = day
 //                    showDate(arg1, arg2+1, arg3);
-                    sDay = arg3 ;
-                    sMonth = arg2+1 ;
-                    sYear = arg1 ;
-                    System.out.println(sDay+"/" +sMonth+"/" + sYear) ;
+                    sDay = arg3;
+                    sMonth = arg2 + 1;
+                    sYear = arg1;
+                    System.out.println(sDay + "/" + sMonth + "/" + sYear);
 
-                    selectedDate = sDay+"/" +sMonth+"/" + sYear;
+                    selectedDate = sDay + "/" + sMonth + "/" + sYear;
 
                 }
             };
@@ -128,6 +135,9 @@ public class postSignUp1 extends AppCompatActivity implements AdapterView.OnItem
         String item = adapterView.getItemAtPosition(i).toString();
 
         choosenItem = item;
+        if (choosenItem.equals("Choose")) {
+            Toast.makeText(postSignUp1.this, "Please choose a Type!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
